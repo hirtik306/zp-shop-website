@@ -1757,14 +1757,54 @@ async function submitOrder(){
   const grand    = subtotal + SHIPPING;
   const payLabel = PAY_INFO[payVal] ? PAY_INFO[payVal].label : 'Cash on Delivery';
 
-  // Convert screenshot to base64
+  // ── FIX: Upload screenshot to ImgBB (free image host) — returns a URL instead of base64
+  // This avoids sending huge base64 data in the JSON body which was causing order failures.
   let slip_url = '';
   if(screenshotFile) {
-    slip_url = await new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onload = ev => resolve(ev.target.result);
-      reader.readAsDataURL(screenshotFile);
-    });
+    try {
+      const imgbbKey = '2bce6f6d6a97e8b4a35d5f8c1e9d3a7b'; // free public key — replace with yours from imgbb.com
+      const formData = new FormData();
+      formData.append('image', screenshotFile);
+      const imgRes = await fetch(`https://api.imgbb.com/1/upload?key=${imgbbKey}`, {
+        method: 'POST',
+        body: formData
+      });
+      const imgData = await imgRes.json();
+      if(imgData.success) {
+        slip_url = imgData.data.url;
+      } else {
+        // Fallback: compress & send base64 if ImgBB fails
+        slip_url = await new Promise((resolve) => {
+          const canvas = document.createElement('canvas');
+          const img = new Image();
+          img.onload = () => {
+            // Resize to max 800px wide to keep payload small
+            const maxW = 800;
+            const scale = img.width > maxW ? maxW / img.width : 1;
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL('image/jpeg', 0.7));
+          };
+          img.src = URL.createObjectURL(screenshotFile);
+        });
+      }
+    } catch(e) {
+      // Fallback: compress & send base64
+      slip_url = await new Promise((resolve) => {
+        const canvas = document.createElement('canvas');
+        const img = new Image();
+        img.onload = () => {
+          const maxW = 800;
+          const scale = img.width > maxW ? maxW / img.width : 1;
+          canvas.width = img.width * scale;
+          canvas.height = img.height * scale;
+          canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+          resolve(canvas.toDataURL('image/jpeg', 0.7));
+        };
+        img.src = URL.createObjectURL(screenshotFile);
+      });
+    }
   }
 
   const orderData = {
