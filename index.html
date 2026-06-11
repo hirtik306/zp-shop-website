@@ -483,7 +483,36 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 .foot-copy{font-size:12px;color:var(--t3)}
 
 
-/* ── GALLERY RESPONSIVE ── */
+/* ── ELECTRONICS SECTION ── */
+#electronics{background:var(--dark)}
+.elec-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:2.2rem 0 1.8rem}
+.etab{background:var(--d3);border:1px solid var(--b2);border-radius:100px;padding:8px 20px;font-size:12.5px;font-weight:700;color:var(--t2);cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:6px}
+.etab:hover,.etab.active{background:rgba(200,164,0,0.1);border-color:rgba(200,164,0,0.35);color:var(--g2)}
+.elec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--b2)}
+.elec-panel{display:none}
+.elec-panel.active{display:block}
+.ecard{background:var(--d3);padding:1.6rem;cursor:pointer;position:relative;overflow:hidden;transition:background .2s;display:flex;flex-direction:column}
+.ecard:hover{background:var(--d4)}
+.ecard-accent{position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--g),var(--g2));transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.ecard:hover .ecard-accent{transform:scaleX(1)}
+.ecard-badge{position:absolute;top:14px;right:14px;font-size:9.5px;font-weight:900;padding:4px 8px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase;z-index:2}
+.ecard-badge.new-b{background:var(--g);color:#000}
+.ecard-badge.hot-b{background:var(--red);color:#fff}
+.ecard-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:64px}
+.ecard-brand{font-size:9.5px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
+.ecard-name{font-weight:800;font-size:15px;color:var(--txt);margin-bottom:3px;line-height:1.25}
+.ecard-spec{font-size:12px;color:var(--t3);margin-bottom:10px;line-height:1.5}
+.ecard-price{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--g2);line-height:1;margin-bottom:3px}
+.ecard-orig{font-size:12px;color:var(--t3);text-decoration:line-through;margin-bottom:10px}
+.ecard-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.etag{font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:.5px}
+.etag.g{background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.18);color:#4ade80}
+.etag.b{background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.18);color:#93c5fd}
+.etag.au{background:rgba(200,164,0,0.07);border:1px solid rgba(200,164,0,0.18);color:var(--g2)}
+.etag.r{background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.18);color:#fca5a5}
+.ecard-wa{width:100%;background:rgba(200,164,0,0.09);border:1px solid rgba(200,164,0,0.2);border-radius:9px;padding:11px;font-size:13px;font-weight:700;color:var(--g2);text-decoration:none;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .18s}
+.ecard-wa:hover{background:rgba(200,164,0,0.17);border-color:rgba(200,164,0,0.4);transform:translateY(-1px)}
+
 @media(max-width:768px){
   #gallery [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
   #gallery [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
@@ -493,6 +522,60 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 @media(max-width:480px){
   #gallery video{height:180px!important}
 }
+
+/* ── LEGAL MODAL ── */
+.legal-veil{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999999;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(12px)}
+.legal-veil.on{opacity:1;pointer-events:all}
+.legal-box{background:var(--d3);border:1px solid var(--bor);border-radius:22px;width:100%;max-width:760px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;animation:legalIn .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes legalIn{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.legal-hd{padding:1.5rem 2rem;border-bottom:1px solid var(--b2);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:linear-gradient(135deg,var(--d2),var(--d3))}
+.legal-hd-left{display:flex;align-items:center;gap:12px}
+.legal-hd-icon{width:40px;height:40px;background:rgba(200,164,0,0.1);border:1px solid rgba(200,164,0,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.legal-hd-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--txt)}
+.legal-hd-sub{font-size:11px;color:var(--t3);margin-top:2px}
+.legal-x{background:var(--d4);border:1px solid var(--b2);border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--t2);font-size:18px;transition:all .15s;flex-shrink:0}
+.legal-x:hover{color:#fca5a5;border-color:rgba(239,68,68,0.3)}
+.legal-tabs-bar{display:flex;gap:0;border-bottom:1px solid var(--b2);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.legal-tabs-bar::-webkit-scrollbar{display:none}
+.legal-tab-btn{padding:12px 20px;font-size:12px;font-weight:700;color:var(--t3);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;white-space:nowrap;transition:all .18s}
+.legal-tab-btn:hover{color:var(--t2)}
+.legal-tab-btn.active{color:var(--g2);border-bottom-color:var(--g2)}
+.legal-body{flex:1;overflow-y:auto;padding:2rem;scrollbar-width:thin;scrollbar-color:var(--bor) transparent}
+.legal-body::-webkit-scrollbar{width:5px}
+.legal-body::-webkit-scrollbar-track{background:transparent}
+.legal-body::-webkit-scrollbar-thumb{background:var(--bor);border-radius:10px}
+.legal-content{display:none}
+.legal-content.active{display:block}
+.lc-hero{background:linear-gradient(135deg,rgba(200,164,0,0.06),rgba(200,164,0,0.02));border:1px solid rgba(200,164,0,0.14);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.8rem;display:flex;align-items:flex-start;gap:14px}
+.lc-hero-icon{font-size:32px;flex-shrink:0;margin-top:2px}
+.lc-hero-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;margin-bottom:4px}
+.lc-hero-date{font-size:11px;color:var(--t3);font-weight:600;letter-spacing:.5px}
+.lc-section{margin-bottom:1.6rem}
+.lc-section-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--g2);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--b2)}
+.lc-section-title span{font-size:16px}
+.lc-p{font-size:13.5px;color:var(--t2);line-height:1.82;margin-bottom:10px}
+.lc-list{list-style:none;padding:0;margin:0 0 10px}
+.lc-list li{font-size:13.5px;color:var(--t2);line-height:1.75;padding:6px 0 6px 22px;position:relative;border-bottom:1px solid rgba(255,255,255,0.03)}
+.lc-list li:last-child{border-bottom:none}
+.lc-list li::before{content:'→';position:absolute;left:0;color:var(--g);font-weight:900;font-size:12px}
+.lc-highlight{background:rgba(200,164,0,0.06);border-left:3px solid var(--g);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--t2);line-height:1.75}
+.lc-highlight strong{color:var(--g2)}
+.lc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+@media(max-width:520px){.lc-grid{grid-template-columns:1fr}}
+.lc-card{background:var(--d4);border:1px solid var(--b2);border-radius:10px;padding:14px;text-align:center}
+.lc-card-icon{font-size:26px;margin-bottom:6px}
+.lc-card-title{font-size:12px;font-weight:800;color:var(--txt);margin-bottom:4px}
+.lc-card-desc{font-size:11.5px;color:var(--t3);line-height:1.5}
+.lc-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.lc-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px}
+.lc-badge.green{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:#4ade80}
+.lc-badge.gold{background:rgba(200,164,0,0.08);border:1px solid rgba(200,164,0,0.2);color:var(--g2)}
+.lc-badge.blue{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:#93c5fd}
+.lc-badge.red{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:#fca5a5}
+.lc-contact-box{background:var(--d4);border:1px solid var(--bor);border-radius:12px;padding:1.4rem;margin-top:1.4rem;text-align:center}
+.lc-contact-box p{font-size:13px;color:var(--t2);margin-bottom:1rem;line-height:1.7}
+.lc-wa-btn{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#000;padding:11px 22px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;transition:all .18s}
+.lc-wa-btn:hover{background:var(--g2);transform:translateY(-1px)}
 
 /* ── WA FAB ── */
 .wa-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:800;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:all .22s;animation:fabPop .6s 1s cubic-bezier(.34,1.56,.64,1) both}
@@ -708,6 +791,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <a href="#phones">Phones</a>
     <a href="#brands">All Brands</a>
     <a href="#accessories">Accessories</a>
+    <a href="#electronics">Electronics</a>
     <a href="#services">Services</a>
     <a href="#about">Contact</a>
   </div>
@@ -1012,6 +1096,662 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       <a href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+accessories+ke+baare+mein+poochna+tha" target="_blank" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Saari Accessories Dekho WhatsApp Pe
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ELECTRONICS -->
+<section id="electronics">
+  <div class="sec-wrap">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div class="sec-eye">Electronics</div>
+        <h2 class="sec-title">Full Electronics Store</h2>
+        <p class="sec-sub" style="max-width:560px">Laptops, Tablets, Smart TVs, Smart Watches, Gaming aur bhi bohat kuch — sab ek jagah</p>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="elec-tabs reveal">
+      <button class="etab active" onclick="showElecTab('laptops',this)">💻 Laptops</button>
+      <button class="etab" onclick="showElecTab('tablets',this)">📱 Tablets</button>
+      <button class="etab" onclick="showElecTab('smartwatches',this)">⌚ Smart Watches</button>
+      <button class="etab" onclick="showElecTab('tvs',this)">📺 Smart TVs</button>
+      <button class="etab" onclick="showElecTab('gaming',this)">🎮 Gaming</button>
+      <button class="etab" onclick="showElecTab('audio',this)">🎧 Audio</button>
+      <button class="etab" onclick="showElecTab('cameras',this)">📷 Cameras</button>
+    </div>
+
+    <!-- LAPTOPS -->
+    <div class="elec-panel active" id="elec-laptops">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">MacBook Air M2</div>
+          <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · 18hr Battery</div>
+          <div class="ecard-price">Rs. 2,29,999</div>
+          <div class="ecard-orig">Rs. 2,60,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Apple Silicon</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Air+M2+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">MacBook Air M3</div>
+          <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · Latest 2024</div>
+          <div class="ecard-price">Rs. 2,79,999</div>
+          <div class="ecard-orig">Rs. 3,10,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">M3 Chip</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Air+M3+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">MacBook Pro M3 Pro</div>
+          <div class="ecard-spec">14" Liquid Retina XDR · 18GB RAM · 512GB SSD · ProRes</div>
+          <div class="ecard-price">Rs. 4,49,999</div>
+          <div class="ecard-orig">Rs. 4,90,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Pro Chip</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Pro+M3+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Dell</div>
+          <div class="ecard-name">Dell XPS 13 Plus</div>
+          <div class="ecard-spec">13.4" OLED · Intel i7-13th Gen · 16GB RAM · 512GB SSD</div>
+          <div class="ecard-price">Rs. 2,49,999</div>
+          <div class="ecard-orig">Rs. 2,80,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">OLED Screen</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Dell+XPS+13+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">HP</div>
+          <div class="ecard-name">HP Spectre x360 14</div>
+          <div class="ecard-spec">14" OLED 2in1 · Intel i7 · 16GB RAM · 1TB SSD · Touch</div>
+          <div class="ecard-price">Rs. 2,19,999</div>
+          <div class="ecard-orig">Rs. 2,50,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">2-in-1</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+HP+Spectre+x360+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Gaming</span>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">ASUS</div>
+          <div class="ecard-name">ASUS ROG Strix G16</div>
+          <div class="ecard-spec">16" FHD 165Hz · Intel i9 · RTX 4070 · 16GB RAM · 1TB</div>
+          <div class="ecard-price">Rs. 3,79,999</div>
+          <div class="ecard-orig">Rs. 4,20,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag r">RTX 4070</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+ASUS+ROG+Strix+G16+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Lenovo</div>
+          <div class="ecard-name">Lenovo ThinkPad X1 Carbon</div>
+          <div class="ecard-spec">14" IPS · Intel i7 · 16GB RAM · 512GB SSD · Ultra Light</div>
+          <div class="ecard-price">Rs. 2,89,999</div>
+          <div class="ecard-orig">Rs. 3,20,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Business</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+ThinkPad+X1+Carbon+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">💻</div>
+          <div class="ecard-brand">Microsoft</div>
+          <div class="ecard-name">Surface Laptop 5</div>
+          <div class="ecard-spec">13.5" PixelSense · Intel i5 · 8GB RAM · 256GB SSD · Windows 11</div>
+          <div class="ecard-price">Rs. 1,89,999</div>
+          <div class="ecard-orig">Rs. 2,10,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Touch Screen</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Surface+Laptop+5+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TABLETS -->
+    <div class="elec-panel" id="elec-tablets">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">iPad Pro M4 11"</div>
+          <div class="ecard-spec">11" Ultra Retina XDR OLED · M4 Chip · 256GB · Wi-Fi + 5G</div>
+          <div class="ecard-price">Rs. 2,49,999</div>
+          <div class="ecard-orig">Rs. 2,80,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">M4 Chip</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Pro+M4+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">iPad Pro M4 13"</div>
+          <div class="ecard-spec">13" Ultra Retina XDR OLED · M4 Chip · 256GB · Thinnest iPad Ever</div>
+          <div class="ecard-price">Rs. 3,29,999</div>
+          <div class="ecard-orig">Rs. 3,70,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Pro Model</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Pro+M4+13+inch+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">iPad Air M2 11"</div>
+          <div class="ecard-spec">11" Liquid Retina · M2 Chip · 128GB · Wi-Fi · All Colors</div>
+          <div class="ecard-price">Rs. 1,69,999</div>
+          <div class="ecard-orig">Rs. 1,90,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">M2 Chip</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Air+M2+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">iPad 10th Gen</div>
+          <div class="ecard-spec">10.9" Liquid Retina · A14 Bionic · 64GB · Wi-Fi · USB-C</div>
+          <div class="ecard-price">Rs. 99,999</div>
+          <div class="ecard-orig">Rs. 1,15,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Best Value</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+10th+Gen+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Galaxy Tab S9 Ultra</div>
+          <div class="ecard-spec">14.6" AMOLED 120Hz · Snapdragon 8 Gen 2 · 256GB · S Pen</div>
+          <div class="ecard-price">Rs. 2,79,999</div>
+          <div class="ecard-orig">Rs. 3,10,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">S Pen</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Tab+S9+Ultra+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Galaxy Tab S9 FE</div>
+          <div class="ecard-spec">10.9" TFT 90Hz · Exynos 1380 · 128GB · S Pen Included</div>
+          <div class="ecard-price">Rs. 89,999</div>
+          <div class="ecard-orig">Rs. 1,05,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Budget Pick</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Tab+S9+FE+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📱</div>
+          <div class="ecard-brand">Xiaomi</div>
+          <div class="ecard-name">Xiaomi Pad 6</div>
+          <div class="ecard-spec">11" IPS 144Hz · Snapdragon 870 · 128GB · Fast Charge</div>
+          <div class="ecard-price">Rs. 69,999</div>
+          <div class="ecard-orig">Rs. 82,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">144Hz</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Xiaomi+Pad+6+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SMART WATCHES -->
+    <div class="elec-panel" id="elec-smartwatches">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">Apple Watch Series 10</div>
+          <div class="ecard-spec">46mm · Always-On LTPO OLED · S10 Chip · GPS + Cellular</div>
+          <div class="ecard-price">Rs. 99,999</div>
+          <div class="ecard-orig">Rs. 1,15,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Latest</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+Series+10+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">Apple Watch Ultra 2</div>
+          <div class="ecard-spec">49mm Titanium · MicroLED · 36hr Battery · Dual Frequency GPS</div>
+          <div class="ecard-price">Rs. 1,89,999</div>
+          <div class="ecard-orig">Rs. 2,10,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">Titanium</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+Ultra+2+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">Apple Watch SE 2nd Gen</div>
+          <div class="ecard-spec">40mm · Retina LTPO OLED · S8 Chip · Crash Detection</div>
+          <div class="ecard-price">Rs. 55,999</div>
+          <div class="ecard-orig">Rs. 65,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Best Value</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+SE+2nd+Gen+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Galaxy Watch 7</div>
+          <div class="ecard-spec">44mm · Super AMOLED · Exynos W1000 · 40hr Battery · BioActive</div>
+          <div class="ecard-price">Rs. 69,999</div>
+          <div class="ecard-orig">Rs. 80,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Wear OS</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Watch+7+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Galaxy Watch Ultra</div>
+          <div class="ecard-spec">47mm Titanium · AMOLED · Dual GPS · 60hr Battery · IP68</div>
+          <div class="ecard-price">Rs. 1,39,999</div>
+          <div class="ecard-orig">Rs. 1,60,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag r">Titanium</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Watch+Ultra+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Xiaomi</div>
+          <div class="ecard-name">Xiaomi Watch S3</div>
+          <div class="ecard-spec">1.43" AMOLED · Sapphire Glass · 15-day Battery · SpO2 · GPS</div>
+          <div class="ecard-price">Rs. 24,999</div>
+          <div class="ecard-orig">Rs. 30,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Budget</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Xiaomi+Watch+S3+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">⌚</div>
+          <div class="ecard-brand">Huawei</div>
+          <div class="ecard-name">Huawei Watch GT 4</div>
+          <div class="ecard-spec">46mm · AMOLED · 14-day Battery · ECG · SpO2 · GPS</div>
+          <div class="ecard-price">Rs. 39,999</div>
+          <div class="ecard-orig">Rs. 48,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">14 Days</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Huawei+Watch+GT4+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SMART TVs -->
+    <div class="elec-panel" id="elec-tvs">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Samsung QLED 4K 55"</div>
+          <div class="ecard-spec">55" QLED 4K · 120Hz · HDR10+ · Smart TV · 4 HDMI · WiFi 6</div>
+          <div class="ecard-price">Rs. 1,59,999</div>
+          <div class="ecard-orig">Rs. 1,85,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">QLED</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Samsung+QLED+55+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Samsung OLED 4K 65"</div>
+          <div class="ecard-spec">65" OLED 4K · 144Hz · Tizen OS · Gaming Hub · 4K Upscaling</div>
+          <div class="ecard-price">Rs. 3,49,999</div>
+          <div class="ecard-orig">Rs. 3,90,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">OLED</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Samsung+OLED+65+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">LG</div>
+          <div class="ecard-name">LG OLED C4 55"</div>
+          <div class="ecard-spec">55" OLED evo · α9 AI 4K Gen7 · 120Hz · Dolby Vision · G-Sync</div>
+          <div class="ecard-price">Rs. 2,59,999</div>
+          <div class="ecard-orig">Rs. 2,95,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag r">Best OLED</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+LG+OLED+C4+55+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">LG</div>
+          <div class="ecard-name">LG NanoCell 4K 50"</div>
+          <div class="ecard-spec">50" NanoCell · 4K · 60Hz · HDR · ThinQ AI · 3 HDMI</div>
+          <div class="ecard-price">Rs. 1,09,999</div>
+          <div class="ecard-orig">Rs. 1,30,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Budget 4K</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+LG+NanoCell+50+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">Sony Bravia XR A80L 55"</div>
+          <div class="ecard-spec">55" OLED · XR Cognitive Processor · 4K 120Hz · Dolby Atmos</div>
+          <div class="ecard-price">Rs. 2,89,999</div>
+          <div class="ecard-orig">Rs. 3,20,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">XR Processor</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+Bravia+OLED+55+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📺</div>
+          <div class="ecard-brand">Hisense</div>
+          <div class="ecard-name">Hisense ULED 4K 65"</div>
+          <div class="ecard-spec">65" ULED · 4K 60Hz · Dolby Vision · VIDAA Smart OS · 3 HDMI</div>
+          <div class="ecard-price">Rs. 1,19,999</div>
+          <div class="ecard-orig">Rs. 1,40,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Value King</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Hisense+65+ULED+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GAMING -->
+    <div class="elec-panel" id="elec-gaming">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">PlayStation 5 Slim</div>
+          <div class="ecard-spec">PS5 Slim · Disc Edition · 1TB SSD · 4K 120fps · Ray Tracing</div>
+          <div class="ecard-price">Rs. 1,29,999</div>
+          <div class="ecard-orig">Rs. 1,50,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag r">4K Gaming</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+Slim+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">PlayStation 5 Digital</div>
+          <div class="ecard-spec">PS5 Digital · No Disc · 1TB SSD · 4K · DualSense Controller</div>
+          <div class="ecard-price">Rs. 1,09,999</div>
+          <div class="ecard-orig">Rs. 1,25,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">Digital Only</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+Digital+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">Microsoft</div>
+          <div class="ecard-name">Xbox Series X</div>
+          <div class="ecard-spec">4K 120fps · 1TB SSD · Xbox Game Pass · Quick Resume · 4K Blu-ray</div>
+          <div class="ecard-price">Rs. 1,19,999</div>
+          <div class="ecard-orig">Rs. 1,38,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Game Pass</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Xbox+Series+X+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">Nintendo</div>
+          <div class="ecard-name">Nintendo Switch OLED</div>
+          <div class="ecard-spec">7" OLED Screen · Portable + TV Mode · 64GB · Joy-Con Controllers</div>
+          <div class="ecard-price">Rs. 59,999</div>
+          <div class="ecard-orig">Rs. 70,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Portable</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Nintendo+Switch+OLED+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">PS5 DualSense Controller</div>
+          <div class="ecard-spec">Haptic Feedback · Adaptive Triggers · Built-in Mic · USB-C · Multiple Colors</div>
+          <div class="ecard-price">Rs. 14,999</div>
+          <div class="ecard-orig">Rs. 18,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Accessory</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+DualSense+Controller+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🎮</div>
+          <div class="ecard-brand">ASUS</div>
+          <div class="ecard-name">ROG Ally X Gaming Handheld</div>
+          <div class="ecard-spec">7" FHD 120Hz · AMD Z1 Extreme · 24GB RAM · 1TB SSD · Windows 11</div>
+          <div class="ecard-price">Rs. 1,49,999</div>
+          <div class="ecard-orig">Rs. 1,70,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag r">PC Gaming</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+ROG+Ally+X+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="elec-panel" id="elec-audio">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">🎧</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">AirPods Pro 2nd Gen</div>
+          <div class="ecard-spec">ANC · Transparency · H2 Chip · USB-C · 6hr + 24hr Battery</div>
+          <div class="ecard-price">Rs. 29,999</div>
+          <div class="ecard-orig">Rs. 36,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">ANC</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+Pro+2+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">🎧</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">AirPods 4</div>
+          <div class="ecard-spec">H2 Chip · Open-Ear · Adaptive Audio · USB-C · ANC Option</div>
+          <div class="ecard-price">Rs. 19,999</div>
+          <div class="ecard-orig">Rs. 24,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag b">Latest</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+4+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🎧</div>
+          <div class="ecard-brand">Apple</div>
+          <div class="ecard-name">AirPods Max</div>
+          <div class="ecard-spec">Over-Ear · Premium ANC · Spatial Audio · H1 Chip · USB-C · 20hr Battery</div>
+          <div class="ecard-price">Rs. 69,999</div>
+          <div class="ecard-orig">Rs. 82,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag r">Premium</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+Max+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">🎧</div>
+          <div class="ecard-brand">Samsung</div>
+          <div class="ecard-name">Galaxy Buds3 Pro</div>
+          <div class="ecard-spec">ANC · 360° Audio · 24-bit Hi-Fi · Blade Design · 6hr Battery</div>
+          <div class="ecard-price">Rs. 24,999</div>
+          <div class="ecard-orig">Rs. 30,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Hi-Fi</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Buds3+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🎧</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">Sony WH-1000XM5</div>
+          <div class="ecard-spec">Industry Best ANC · 30hr Battery · Multipoint · Hi-Res Audio</div>
+          <div class="ecard-price">Rs. 54,999</div>
+          <div class="ecard-orig">Rs. 65,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Best ANC</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+WH1000XM5+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">🔊</div>
+          <div class="ecard-brand">JBL</div>
+          <div class="ecard-name">JBL Charge 5</div>
+          <div class="ecard-spec">Portable Bluetooth Speaker · IP67 Waterproof · 20hr · PartyBoost · USB-C</div>
+          <div class="ecard-price">Rs. 18,999</div>
+          <div class="ecard-orig">Rs. 22,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Waterproof</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+JBL+Charge+5+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CAMERAS -->
+    <div class="elec-panel" id="elec-cameras">
+      <div class="elec-grid">
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge new-b">New</span>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">Sony</div>
+          <div class="ecard-name">Sony Alpha A7 IV</div>
+          <div class="ecard-spec">33MP Full Frame · 4K 60fps · In-Body Stabilization · Dual SD · WiFi</div>
+          <div class="ecard-price">Rs. 3,99,999</div>
+          <div class="ecard-orig">Rs. 4,50,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Full Frame</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+A7+IV+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">Canon</div>
+          <div class="ecard-name">Canon EOS R50</div>
+          <div class="ecard-spec">24.2MP APS-C · 4K 30fps · DIGIC X · Dual Pixel AF · WiFi + Bluetooth</div>
+          <div class="ecard-price">Rs. 1,49,999</div>
+          <div class="ecard-orig">Rs. 1,75,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag au">Mirrorless</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Canon+EOS+R50+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">Nikon</div>
+          <div class="ecard-name">Nikon Z50 II</div>
+          <div class="ecard-spec">20.9MP · 4K 30fps · Subject Tracking AF · Vlogger Flip Screen</div>
+          <div class="ecard-price">Rs. 1,39,999</div>
+          <div class="ecard-orig">Rs. 1,60,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Vlog Ready</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Nikon+Z50+II+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <span class="ecard-badge hot-b">Hot</span>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">GoPro</div>
+          <div class="ecard-name">GoPro HERO 13 Black</div>
+          <div class="ecard-spec">5.3K 60fps · HyperSmooth 7.0 · Waterproof · Magnetic Mounts · 5.3K</div>
+          <div class="ecard-price">Rs. 89,999</div>
+          <div class="ecard-orig">Rs. 1,05,000</div>
+          <div class="ecard-tags"><span class="etag g">Available</span><span class="etag r">Action Cam</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+GoPro+Hero+13+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">DJI</div>
+          <div class="ecard-name">DJI Mini 4 Pro Drone</div>
+          <div class="ecard-spec">4K 60fps HDR · 34min Flight · Omnidirectional Obstacle Sensing · 20km</div>
+          <div class="ecard-price">Rs. 1,79,999</div>
+          <div class="ecard-orig">Rs. 2,05,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag au">Drone</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+DJI+Mini+4+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+        <div class="ecard reveal">
+          <div class="ecard-accent"></div>
+          <div class="ecard-img">📷</div>
+          <div class="ecard-brand">Instax</div>
+          <div class="ecard-name">Fujifilm Instax Mini 12</div>
+          <div class="ecard-spec">Instant Film Camera · Auto Exposure · Close-Up Mode · 5 Colors</div>
+          <div class="ecard-price">Rs. 14,999</div>
+          <div class="ecard-orig">Rs. 18,000</div>
+          <div class="ecard-tags"><span class="etag g">In Stock</span><span class="etag b">Instant Print</span></div>
+          <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Instax+Mini+12+chahiye" target="_blank">📲 WhatsApp Order</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reveal" style="text-align:center;margin-top:3rem">
+      <p style="font-size:13.5px;color:var(--t3);margin-bottom:1.2rem">Aur bhi items available hain — WhatsApp karo ya store pe aa jao 📍</p>
+      <a href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Electronics+ke+baare+mein+poochna+tha" target="_blank" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Saara Stock Dekho WhatsApp Pe
       </a>
     </div>
   </div>
@@ -1422,12 +2162,334 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       <a href="#brands">Redmi / Xiaomi</a>
       <a href="#brands">Used Phones</a>
     </div>
+    <div class="foot-col">
+      <h5>Legal & Policies</h5>
+      <a href="#" onclick="openLegal('privacy');return false;">🔒 Privacy Policy</a>
+      <a href="#" onclick="openLegal('terms');return false;">📋 Terms of Service</a>
+      <a href="#" onclick="openLegal('returns');return false;">🔄 Return & Refund Policy</a>
+      <a href="#" onclick="openLegal('shipping');return false;">🚚 Shipping Policy</a>
+      <a href="#" onclick="openLegal('warranty');return false;">🛡️ Warranty Policy</a>
+    </div>
   </div>
   <div class="foot-bottom">
     <span class="foot-copy">© 2025 ZP Mobile Zone · Singapore Plaza, Rawalpindi</span>
-    <span class="foot-copy">Prices may vary — confirm via WhatsApp</span>
+    <span class="foot-copy" style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#" onclick="openLegal('privacy');return false;" style="color:var(--t3);text-decoration:none;font-size:12px">Privacy Policy</a>
+      <a href="#" onclick="openLegal('terms');return false;" style="color:var(--t3);text-decoration:none;font-size:12px">Terms of Service</a>
+      <a href="#" onclick="openLegal('returns');return false;" style="color:var(--t3);text-decoration:none;font-size:12px">Return Policy</a>
+    </span>
   </div>
 </footer>
+
+<!-- LEGAL MODAL -->
+<div class="legal-veil" id="legal-veil" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-hd">
+      <div class="legal-hd-left">
+        <div class="legal-hd-icon" id="legal-icon">📋</div>
+        <div>
+          <div class="legal-hd-title" id="legal-title">Legal</div>
+          <div class="legal-hd-sub">ZP Mobile Zone · Last updated: June 2025</div>
+        </div>
+      </div>
+      <div class="legal-x" onclick="closeLegal()">✕</div>
+    </div>
+    <div class="legal-tabs-bar">
+      <button class="legal-tab-btn active" onclick="switchLegalTab('privacy',this)">🔒 Privacy Policy</button>
+      <button class="legal-tab-btn" onclick="switchLegalTab('terms',this)">📋 Terms of Service</button>
+      <button class="legal-tab-btn" onclick="switchLegalTab('returns',this)">🔄 Return & Refund</button>
+      <button class="legal-tab-btn" onclick="switchLegalTab('shipping',this)">🚚 Shipping Policy</button>
+      <button class="legal-tab-btn" onclick="switchLegalTab('warranty',this)">🛡️ Warranty</button>
+    </div>
+    <div class="legal-body">
+
+      <!-- PRIVACY POLICY -->
+      <div class="legal-content active" id="legal-privacy">
+        <div class="lc-hero">
+          <div class="lc-hero-icon">🔒</div>
+          <div>
+            <div class="lc-hero-title">Privacy Policy</div>
+            <div class="lc-hero-date">Effective: June 1, 2025 · ZP Mobile Zone, Singapore Plaza, Rawalpindi</div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📌</span> Introduction</div>
+          <p class="lc-p">ZP Mobile Zone ("hum", "hamara", "ZP") apni customers ki privacy ki bohot izzat karta hai. Yeh policy explain karti hai ke hum kaunsa data collect karte hain, kyun karte hain, aur kaise use karte hain jab aap hamare website (<strong>zpmobilezone.com</strong>) ya WhatsApp ke zariye hamse contact karte hain.</p>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📂</span> Hum Kya Information Collect Karte Hain</div>
+          <div class="lc-grid">
+            <div class="lc-card"><div class="lc-card-icon">👤</div><div class="lc-card-title">Personal Info</div><div class="lc-card-desc">Naam, phone number, delivery address — order process karne ke liye</div></div>
+            <div class="lc-card"><div class="lc-card-icon">💳</div><div class="lc-card-title">Payment Info</div><div class="lc-card-desc">Bank transfer ya EasyPaisa/JazzCash screenshot — confirmation ke liye</div></div>
+            <div class="lc-card"><div class="lc-card-icon">📱</div><div class="lc-card-title">Device Info</div><div class="lc-card-desc">Browser type, IP address — website security aur analytics ke liye</div></div>
+            <div class="lc-card"><div class="lc-card-icon">💬</div><div class="lc-card-title">Chat History</div><div class="lc-card-desc">WhatsApp messages — order aur support record ke liye</div></div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>🎯</span> Yeh Data Kyun Use Karte Hain</div>
+          <ul class="lc-list">
+            <li>Orders process karne aur confirm karne ke liye</li>
+            <li>Delivery aur courier tracking ke liye</li>
+            <li>Customer support aur queries resolve karne ke liye</li>
+            <li>Fraud prevention aur security ke liye</li>
+            <li>New arrivals, deals aur offers ke baare mein update karne ke liye (sirf aapki permission se)</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>🤝</span> Sharing of Information</div>
+          <div class="lc-highlight"><strong>Hum aapka data kisi third party ko kabhi sell nahi karte.</strong> Sirf courier services (TCS, Leopards) ko delivery ke liye aapka naam aur address share kiya jata hai — aur koi nahi.</div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>🔐</span> Data Security</div>
+          <p class="lc-p">Aapki personal information securely rakhi jaati hai. Hamare store ke systems password-protected hain aur WhatsApp end-to-end encrypted hai. Hum kabhi bhi aapka CNIC, bank password, ya card details nahi maangenge.</p>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>✅</span> Aapke Rights</div>
+          <ul class="lc-list">
+            <li>Apna data dekhne ka haq — hum bata denge kya store hai</li>
+            <li>Data delete karne ka haq — WhatsApp pe request karo</li>
+            <li>Marketing messages se opt-out karne ka haq — "STOP" likh ke bhejo</li>
+            <li>Data correction ka haq — galat info update karwa sakte hain</li>
+          </ul>
+        </div>
+        <div class="lc-contact-box">
+          <p>Privacy ke baare mein koi sawal hai? Hum se seedha contact karo 👇</p>
+          <a class="lc-wa-btn" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Privacy+Policy+ke+baare+mein+poochna+tha" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Pe Poocho
+          </a>
+        </div>
+      </div>
+
+      <!-- TERMS OF SERVICE -->
+      <div class="legal-content" id="legal-terms">
+        <div class="lc-hero">
+          <div class="lc-hero-icon">📋</div>
+          <div>
+            <div class="lc-hero-title">Terms of Service</div>
+            <div class="lc-hero-date">Effective: June 1, 2025 · ZP Mobile Zone, Rawalpindi</div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📌</span> Agreement</div>
+          <p class="lc-p">Yeh website use karke ya ZP Mobile Zone se koi bhi purchase karke, aap in Terms of Service se agree karte hain. Agar aap agree nahi karte to please website use na karein.</p>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>🛒</span> Ordering Process</div>
+          <ul class="lc-list">
+            <li>Orders website pe ya WhatsApp ke zariye place ho sakte hain</li>
+            <li>Order confirm tab hoga jab payment receive aur verify ho jaye</li>
+            <li>Product availability confirm karna zaroori hai — stock limited ho sakta hai</li>
+            <li>Prices website pe show hoti hain aur kabhi kabhi change ho sakti hain — final price WhatsApp pe confirm hoti hai</li>
+            <li>Order place karne ke baad cancel karne ke liye 2 ghante ka waqt hai</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>💳</span> Payment Terms</div>
+          <div class="lc-badge-row">
+            <span class="lc-badge green">✓ Bank Transfer</span>
+            <span class="lc-badge green">✓ EasyPaisa</span>
+            <span class="lc-badge green">✓ JazzCash</span>
+            <span class="lc-badge gold">✓ Cash on Pickup</span>
+          </div>
+          <ul class="lc-list">
+            <li>Payment pehle karna hoga — COD sirf Rawalpindi mein available hai</li>
+            <li>Payment screenshot WhatsApp pe bhejni hogi confirmation ke liye</li>
+            <li>Fake screenshot bhejne par legal action liya ja sakta hai</li>
+            <li>Payment bounce hone par order automatically cancel ho jata hai</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>⚠️</span> Prohibited Actions</div>
+          <ul class="lc-list">
+            <li>Website hack karne ya unauthorized access ki koshish karna</li>
+            <li>Fake orders place karna ya staff ko mislead karna</li>
+            <li>ZP Mobile Zone ka naam galat istemaal karna ya fake reviews likhna</li>
+            <li>Abusive language ya harassment — hum order refuse kar sakte hain</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>⚖️</span> Liability Limitation</div>
+          <p class="lc-p">ZP Mobile Zone genuine products bechta hai. Manufacturer defects ke liye warranty claim manufacturer se hogi, lekin hum is process mein puri help karenge. Accidental damage, user misuse, ya water damage cover nahi hota.</p>
+          <div class="lc-highlight"><strong>Note:</strong> ZP Mobile Zone Pakistan ke applicable laws ke under operate karta hai. Koi bhi dispute amicably resolve karne ki koshish ki jaye gi — pehla step hamesha WhatsApp pe contact karna hai.</div>
+        </div>
+        <div class="lc-contact-box">
+          <p>Koi bhi sawal ya concern ho to hum se rabita karo</p>
+          <a class="lc-wa-btn" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Terms+ke+baare+mein+poochna+tha" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Karo
+          </a>
+        </div>
+      </div>
+
+      <!-- RETURN & REFUND POLICY -->
+      <div class="legal-content" id="legal-returns">
+        <div class="lc-hero">
+          <div class="lc-hero-icon">🔄</div>
+          <div>
+            <div class="lc-hero-title">Return & Refund Policy</div>
+            <div class="lc-hero-date">Effective: June 1, 2025 · ZP Mobile Zone, Rawalpindi</div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📅</span> Return Window</div>
+          <div class="lc-grid">
+            <div class="lc-card"><div class="lc-card-icon">📱</div><div class="lc-card-title">Brand New Phones</div><div class="lc-card-desc"><strong style="color:var(--g2)">7 din</strong> return window — hardware defect hone par</div></div>
+            <div class="lc-card"><div class="lc-card-icon">♻️</div><div class="lc-card-title">Used Phones</div><div class="lc-card-desc"><strong style="color:var(--g2)">3 din</strong> return window — agreed condition se alag nikle to</div></div>
+            <div class="lc-card"><div class="lc-card-icon">🎧</div><div class="lc-card-title">Accessories</div><div class="lc-card-desc"><strong style="color:var(--g2)">7 din</strong> replacement — manufacturing defect par</div></div>
+            <div class="lc-card"><div class="lc-card-icon">💻</div><div class="lc-card-title">Laptops / Tablets</div><div class="lc-card-desc"><strong style="color:var(--g2)">5 din</strong> return — hardware defect hone par</div></div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>✅</span> Return Accept Hone Ki Conditions</div>
+          <ul class="lc-list">
+            <li>Product original packaging mein hona chahiye — box, cable, charger sab intact</li>
+            <li>Hardware defect clearly visible ya verifiable honi chahiye</li>
+            <li>Product unused condition mein hona chahiye (scratches, dents, liquid damage nahi)</li>
+            <li>Original receipt ya order confirmation WhatsApp pe show karna hoga</li>
+            <li>Return request time window ke andar karna zaroori hai</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>❌</span> Return Accept Nahi Hoga Agar</div>
+          <ul class="lc-list">
+            <li>Physical damage — girne, totnay, ya paani lagnay ki wajah se</li>
+            <li>Box ya original packaging missing ho</li>
+            <li>"Mind change" — pasand nahi aaya to return nahi hoga (pehle store pe dekhna behtar hai)</li>
+            <li>Seal tod diya ho aur koi defect nahi</li>
+            <li>Return window guzar gayi ho</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>💰</span> Refund Process</div>
+          <div class="lc-highlight"><strong>Refund Timeline:</strong> Return accept hone ke baad <strong>3–5 business days</strong> ke andar same payment method pe refund ho jata hai (Bank Transfer / EasyPaisa / JazzCash).</div>
+          <ul class="lc-list">
+            <li>Store visit karke direct exchange bhi le sakte hain — fastest option</li>
+            <li>Courier return mein shipping charges customer ki responsibility hain</li>
+            <li>Refund mein original shipping charges include nahi honge</li>
+          </ul>
+        </div>
+        <div class="lc-contact-box">
+          <p>Return ya refund ke liye seedha WhatsApp karo — hum 1–2 ghante mein respond karte hain 🕐</p>
+          <a class="lc-wa-btn" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+return+karna+chahta+hun%2C+please+guide+karein" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Return Request Karo
+          </a>
+        </div>
+      </div>
+
+      <!-- SHIPPING POLICY -->
+      <div class="legal-content" id="legal-shipping">
+        <div class="lc-hero">
+          <div class="lc-hero-icon">🚚</div>
+          <div>
+            <div class="lc-hero-title">Shipping Policy</div>
+            <div class="lc-hero-date">Effective: June 1, 2025 · ZP Mobile Zone, Rawalpindi</div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📍</span> Delivery Options</div>
+          <div class="lc-grid">
+            <div class="lc-card"><div class="lc-card-icon">🏪</div><div class="lc-card-title">Store Pickup</div><div class="lc-card-desc">FREE · Same day · Singapore Plaza, Shop #26, 5th Floor, Saddar, Rawalpindi</div></div>
+            <div class="lc-card"><div class="lc-card-icon">🏙️</div><div class="lc-card-title">Rawalpindi / Islamabad</div><div class="lc-card-desc">Rs. 150–200 · Same day ya next day delivery available</div></div>
+            <div class="lc-card"><div class="lc-card-icon">🇵🇰</div><div class="lc-card-title">Pakistan Wide</div><div class="lc-card-desc">Rs. 250–350 · 2–4 business days · TCS / Leopards Courier</div></div>
+            <div class="lc-card"><div class="lc-card-icon">📦</div><div class="lc-card-title">Express Shipping</div><div class="lc-card-desc">Rs. 500+ · Next day delivery — WhatsApp pe confirm karo</div></div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>⏰</span> Processing Time</div>
+          <ul class="lc-list">
+            <li>Payment confirm hone ke baad order <strong>same day process</strong> hota hai (agar 5 PM se pehle order ho)</li>
+            <li>5 PM ke baad orders next business day dispatch hote hain</li>
+            <li>Weekends (Sunday) mein dispatch nahi hota — Monday ko process hoga</li>
+            <li>Public holidays mein delay ho sakta hai — WhatsApp pe inform kar diya jata hai</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📦</span> Packaging</div>
+          <p class="lc-p">Har product safely pack karke bheja jata hai. Phones ko bubble wrap aur hard box mein secure kiya jata hai. Order ke saath payment receipt bhi include hogi.</p>
+          <div class="lc-highlight"><strong>Tracking:</strong> Dispatch hone ke baad courier tracking number WhatsApp pe bheja jata hai. Aap khud TCS ya Leopards website pe real-time track kar sakte hain.</div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>⚠️</span> Delivery Issues</div>
+          <ul class="lc-list">
+            <li>Wrong address dene par re-delivery charges customer pay karega</li>
+            <li>3 delivery attempts ke baad parcel warehouse mein hold hoga — pickup karna padega</li>
+            <li>Courier ke zariye damage — sealed box ki photo delivery pe lena zaroori hai, baad mein claim nahi hoga</li>
+            <li>Lost parcel — courier company se claim kiya jata hai, hum process mein help karte hain</li>
+          </ul>
+        </div>
+        <div class="lc-contact-box">
+          <p>Shipping ya tracking ke liye WhatsApp karo</p>
+          <a class="lc-wa-btn" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+mera+order+track+karna+hai" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order Track Karo
+          </a>
+        </div>
+      </div>
+
+      <!-- WARRANTY POLICY -->
+      <div class="legal-content" id="legal-warranty">
+        <div class="lc-hero">
+          <div class="lc-hero-icon">🛡️</div>
+          <div>
+            <div class="lc-hero-title">Warranty Policy</div>
+            <div class="lc-hero-date">Effective: June 1, 2025 · ZP Mobile Zone, Rawalpindi</div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>📅</span> Warranty Coverage</div>
+          <div class="lc-grid">
+            <div class="lc-card"><div class="lc-card-icon">📱</div><div class="lc-card-title">New iPhone / Samsung</div><div class="lc-card-desc"><strong style="color:var(--g2)">1 Year</strong> manufacturer warranty · Hum claim assist karte hain</div></div>
+            <div class="lc-card"><div class="lc-card-icon">📱</div><div class="lc-card-title">New Android Phones</div><div class="lc-card-desc"><strong style="color:var(--g2)">6–12 Months</strong> manufacturer warranty · Brand ke hisaab se</div></div>
+            <div class="lc-card"><div class="lc-card-icon">♻️</div><div class="lc-card-title">Used Phones</div><div class="lc-card-desc"><strong style="color:var(--g2)">1 Month</strong> ZP Mobile Zone in-store warranty</div></div>
+            <div class="lc-card"><div class="lc-card-icon">🎧</div><div class="lc-card-title">Accessories</div><div class="lc-card-desc"><strong style="color:var(--g2)">7 Days</strong> replacement guarantee on defects</div></div>
+          </div>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>✅</span> Warranty Cover Karta Hai</div>
+          <ul class="lc-list">
+            <li>Manufacturing defects — hardware issues jo aapki wajah se nahi hue</li>
+            <li>Screen issues — dead pixels, backlight problems (physical damage se nahi)</li>
+            <li>Battery defect — unusually fast drain jo manufacturing se ho</li>
+            <li>Speaker, mic, ya camera manufacturing faults</li>
+            <li>Charging port manufacturing defects</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>❌</span> Warranty Cover Nahi Karta</div>
+          <ul class="lc-list">
+            <li>Physical damage — screen crack, dents, bends</li>
+            <li>Water ya liquid damage — kisi bhi amount mein</li>
+            <li>Unauthorized repairs ya third-party parts</li>
+            <li>Software issues, jailbreak, ya unofficial updates se damage</li>
+            <li>Normal wear and tear — scratches, battery natural degradation</li>
+            <li>Theft ya lost phone</li>
+          </ul>
+        </div>
+        <div class="lc-section">
+          <div class="lc-section-title"><span>🔧</span> Warranty Claim Kaise Karein</div>
+          <ul class="lc-list">
+            <li><strong>Step 1:</strong> ZP Mobile Zone ko WhatsApp karo — issue describe karo aur photos bhejo</li>
+            <li><strong>Step 2:</strong> Hum assess karenge — agar warranty applicable hai to confirm karenge</li>
+            <li><strong>Step 3:</strong> Phone store pe laao ya courier karo (Rawalpindi se bahar)</li>
+            <li><strong>Step 4:</strong> Manufacturer ya hum repair/replace karenge — 3–7 business days</li>
+            <li><strong>Step 5:</strong> Fixed phone wapis milega — same courier ya store pickup</li>
+          </ul>
+          <div class="lc-highlight"><strong>Important:</strong> Warranty claim ke liye original purchase proof (WhatsApp order confirmation ya receipt) zaroori hai. Bina proof ke claim nahi hoga.</div>
+        </div>
+        <div class="lc-contact-box">
+          <p>Warranty claim ya repair ke liye WhatsApp karo — hum puri help karenge 🛡️</p>
+          <a class="lc-wa-btn" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+warranty+claim+karna+hai" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Warranty Claim Karo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- WA FAB -->
 <div class="wa-fab-wrap">
@@ -2417,7 +3479,44 @@ renderCart();
 updateBadge();
 document.getElementById('modal-veil').addEventListener('click',function(e){if(e.target===this)closeCheckout();});
 
-// ─── SEARCH ───
+// ─── LEGAL MODAL ───
+const LEGAL_META = {
+  privacy:  {icon:'🔒', title:'Privacy Policy'},
+  terms:    {icon:'📋', title:'Terms of Service'},
+  returns:  {icon:'🔄', title:'Return & Refund Policy'},
+  shipping: {icon:'🚚', title:'Shipping Policy'},
+  warranty: {icon:'🛡️', title:'Warranty Policy'},
+};
+function openLegal(tab){
+  document.getElementById('legal-veil').classList.add('on');
+  document.body.style.overflow='hidden';
+  switchLegalTab(tab, document.querySelector(`.legal-tab-btn[onclick*="'${tab}'"]`));
+}
+function closeLegal(){
+  document.getElementById('legal-veil').classList.remove('on');
+  document.body.style.overflow='';
+}
+function switchLegalTab(tab, btn){
+  document.querySelectorAll('.legal-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.legal-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('legal-'+tab).classList.add('active');
+  if(btn) btn.classList.add('active');
+  const m = LEGAL_META[tab];
+  document.getElementById('legal-icon').textContent = m.icon;
+  document.getElementById('legal-title').textContent = m.title;
+  document.querySelector('.legal-body').scrollTop = 0;
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLegal(); });
+
+// ─── ELECTRONICS TABS ───
+function showElecTab(tab, btn){
+  document.querySelectorAll('.elec-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.etab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('elec-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+
 function handleSearch(q){
   const dd = document.getElementById('searchDropdown');
   q = q.trim().toLowerCase();
