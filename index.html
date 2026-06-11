@@ -434,7 +434,9 @@ section{padding:90px 5vw}
 .acc-card{background:var(--d3);border:1px solid var(--b2);border-radius:18px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
 .acc-card:hover{border-color:var(--bor);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
 .acc-top{padding:1.4rem 1.4rem 0.8rem;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1}
-.acc-emoji{font-size:38px;margin-bottom:10px;display:block}
+.acc-emoji{width:100%;height:130px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,rgba(200,164,0,0.04),rgba(255,255,255,0.02))}
+.acc-emoji img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .4s cubic-bezier(.34,1.56,.64,1);filter:drop-shadow(0 6px 16px rgba(0,0,0,0.4))}
+.acc-card:hover .acc-emoji img{transform:scale(1.08) translateY(-5px)}
 .acc-name{font-weight:800;font-size:13.5px;margin-bottom:5px;color:var(--txt);line-height:1.3}
 .acc-desc{font-size:11.5px;color:var(--t3);line-height:1.6;margin-bottom:10px}
 .acc-price{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--g2);margin-bottom:4px}
@@ -515,9 +517,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 .ecard-badge{position:absolute;top:14px;right:14px;font-size:9.5px;font-weight:900;padding:4px 8px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase;z-index:2}
 .ecard-badge.new-b{background:var(--g);color:#000}
 .ecard-badge.hot-b{background:var(--red);color:#fff}
-.ecard-img{width:100%;height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;background:linear-gradient(135deg,rgba(200,164,0,0.04),rgba(255,255,255,0.02));border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
-.ecard-img svg{width:72px;height:72px;opacity:0.85;transition:transform .3s ease}
-.ecard:hover .ecard-img svg{transform:scale(1.08) translateY(-4px)}
+.ecard-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;background:linear-gradient(135deg,rgba(200,164,0,0.04),rgba(255,255,255,0.02));border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
+.ecard-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .4s cubic-bezier(.34,1.56,.64,1);filter:drop-shadow(0 8px 20px rgba(0,0,0,0.4))}
+.ecard:hover .ecard-img img{transform:scale(1.08) translateY(-6px)}
 .ecard-brand{font-size:9.5px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
 .ecard-name{font-weight:800;font-size:15px;color:var(--txt);margin-bottom:3px;line-height:1.25}
 .ecard-spec{font-size:12px;color:var(--t3);margin-bottom:10px;line-height:1.5}
@@ -807,12 +809,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <span class="nav-brand"><em>ZP</em> Mobile Zone</span>
   </a>
   <div class="nav-links">
-    <a href="#phones">Phones</a>
-    <a href="#brands">All Brands</a>
-    <a href="#accessories">Accessories</a>
-    <a href="#electronics">Electronics</a>
     <a href="#services">Services</a>
     <a href="#about">Contact</a>
+    <a href="#about">About Us</a>
   </div>
 
   <!-- SEARCH BAR -->
@@ -1015,9 +1014,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="acc-grid reveal">
 
       <!-- iPhone Original Charger 20W -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-charger')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🔌</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHJA3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1603911344000" alt="iPhone Charger 20W" onerror="this.src='https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&q=80'"></span>
           <span class="acc-badge hot">Hot</span>
           <div class="acc-name">iPhone Charger 20W</div>
           <div class="acc-desc">Original Apple 20W USB-C Fast Charger — sirf PTA approved iPhones ke liye perfect</div>
@@ -1028,9 +1027,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- USB-C to Lightning Cable -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-cable-lgt')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🔋</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQGH2?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1670621929162" alt="USB-C to Lightning Cable" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80'"></span>
           <span class="acc-badge best">Best Seller</span>
           <div class="acc-name">USB-C to Lightning Cable</div>
           <div class="acc-desc">Original Apple braided cable 1m — fast charging support, iPhone 7 se 15 tak</div>
@@ -1041,9 +1040,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- USB-C Cable (iPhone 15+) -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-cable-usbc')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">⚡</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MUF72?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1686843762966" alt="USB-C Cable" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80'"></span>
           <span class="acc-badge new">New</span>
           <div class="acc-name">USB-C to USB-C Cable</div>
           <div class="acc-desc">iPhone 15 series ke liye original USB-C cable — 60W fast charging</div>
@@ -1054,9 +1053,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- iPhone Cover / Case -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-cover')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">📱</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MT0E3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1693010077" alt="iPhone Silicone Cover" onerror="this.src='https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=300&q=80'"></span>
           <span class="acc-badge hot">Hot</span>
           <div class="acc-name">iPhone Silicone Cover</div>
           <div class="acc-desc">Premium quality silicone case — camera protection ke saath, har iPhone model available</div>
@@ -1067,9 +1066,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- Leather Case -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-leather')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🧳</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPRY3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1660867314" alt="Leather Case" onerror="this.src='https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=300&q=80'"></span>
           <span class="acc-badge best">Premium</span>
           <div class="acc-name">Leather Case</div>
           <div class="acc-desc">Premium leather finish case — MagSafe compatible, luxury look aur full protection</div>
@@ -1080,9 +1079,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- Tempered Glass -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-glass')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🛡️</span>
+          <span class="acc-emoji"><img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&q=80" alt="Tempered Glass" onerror="this.src='https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&q=80'"></span>
           <span class="acc-badge best">Best Seller</span>
           <div class="acc-name">Tempered Glass</div>
           <div class="acc-desc">9H hardness screen protector — zero bubbles, fingerprint resistant, easy apply</div>
@@ -1093,9 +1092,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- AirPods -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-airpods')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🎧</span>
+          <span class="acc-emoji"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1660803860" alt="AirPods" onerror="this.src='https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=300&q=80'"></span>
           <span class="acc-badge hot">Hot</span>
           <div class="acc-name">AirPods / Earbuds</div>
           <div class="acc-desc">Original Apple AirPods aur premium compatible earbuds — crystal clear sound quality</div>
@@ -1106,9 +1105,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- Power Bank -->
-      <div class="acc-card">
+      <div class="acc-card" onclick="openItemModal('acc-powerbank')" style="cursor:pointer">
         <div class="acc-top">
-          <span class="acc-emoji">🔆</span>
+          <span class="acc-emoji"><img src="https://images.unsplash.com/photo-1609692814858-f7cd2f0afa4f?w=400&h=400&fit=crop&q=80" alt="Power Bank" onerror="this.src='https://images.unsplash.com/photo-1609692814858-f7cd2f0afa4f?w=300&q=80'"></span>
           <span class="acc-badge new">New</span>
           <div class="acc-name">Power Bank 10000mAh</div>
           <div class="acc-desc">Compact fast-charging power bank — dual output, sirf 1 charge mein iPhone 2-3 baar charge</div>
@@ -1189,10 +1188,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel active" id="elec-laptops">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-mb-air-m2')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=400&hei=400&fmt=jpeg&qlt=90" alt="MacBook Air M2" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Air M2</div>
           <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · 18hr Battery</div>
@@ -1202,10 +1201,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Air+M2+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-mb-air-m3')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-starlight-select-202402?wid=400&hei=400&fmt=jpeg&qlt=90" alt="MacBook Air M3" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-starlight-select-202402?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Air M3</div>
           <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · Latest 2024</div>
@@ -1215,9 +1214,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Air+M3+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-mb-pro-m3')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=400&hei=400&fmt=jpeg&qlt=90" alt="MacBook Pro M3 Pro" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Pro M3 Pro</div>
           <div class="ecard-spec">14" Liquid Retina XDR · 18GB RAM · 512GB SSD · ProRes</div>
@@ -1227,10 +1226,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+MacBook+Pro+M3+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-dell-xps')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/media-gallery/silver/notebook-xps-13-9320-t-silver-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=400&hei=400&qlt=100" alt="Dell XPS 13 Plus" loading="lazy" onerror="this.src='https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/media-gallery/silver/notebook-xps-13-9320-t-silver-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=400&hei=400&qlt=100'"></div>
           <div class="ecard-brand">Dell</div>
           <div class="ecard-name">Dell XPS 13 Plus</div>
           <div class="ecard-spec">13.4" OLED · Intel i7-13th Gen · 16GB RAM · 512GB SSD</div>
@@ -1240,9 +1239,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Dell+XPS+13+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-hp-spectre')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/knowledgebase/c08244900.png?wid=400&hei=400" alt="HP Spectre x360 14" loading="lazy" onerror="this.src='https://ssl-product-images.www8-hp.com/digmedialib/prodimg/knowledgebase/c08244900.png?wid=400&hei=400'"></div>
           <div class="ecard-brand">HP</div>
           <div class="ecard-name">HP Spectre x360 14</div>
           <div class="ecard-spec">14" OLED 2in1 · Intel i7 · 16GB RAM · 1TB SSD · Touch</div>
@@ -1252,10 +1251,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+HP+Spectre+x360+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-asus-rog')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Gaming</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://dlcdnwebimgs.asus.com/gain/D7E8B5C3-2A2E-4B3C-A9D8-E3B2E0D5F4C1/fwebp" alt="ASUS ROG Strix G16" loading="lazy" onerror="this.src='https://dlcdnwebimgs.asus.com/gain/D7E8B5C3-2A2E-4B3C-A9D8-E3B2E0D5F4C1/fwebp'"></div>
           <div class="ecard-brand">ASUS</div>
           <div class="ecard-name">ASUS ROG Strix G16</div>
           <div class="ecard-spec">16" FHD 165Hz · Intel i9 · RTX 4070 · 16GB RAM · 1TB</div>
@@ -1265,9 +1264,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+ASUS+ROG+Strix+G16+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-thinkpad')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://p4-ofp.static.pub/fes/cms/2022/09/13/0k0xhcyrphekgefh55jmqxgz3kqjiv764016.png" alt="Lenovo ThinkPad X1 Carbon" loading="lazy" onerror="this.src='https://p4-ofp.static.pub/fes/cms/2022/09/13/0k0xhcyrphekgefh55jmqxgz3kqjiv764016.png'"></div>
           <div class="ecard-brand">Lenovo</div>
           <div class="ecard-name">Lenovo ThinkPad X1 Carbon</div>
           <div class="ecard-spec">14" IPS · Intel i7 · 16GB RAM · 512GB SSD · Ultra Light</div>
@@ -1277,9 +1276,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+ThinkPad+X1+Carbon+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-surface')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
+          <div class="ecard-img"><img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4OXSh?ver=5cc8&q=90&m=6&h=400&w=400&b=%23FFFFFF&f=jpg&o=f&aim=true" alt="Surface Laptop 5" loading="lazy" onerror="this.src='https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4OXSh?ver=5cc8&q=90&m=6&h=400&w=400&b=%23FFFFFF&f=jpg&o=f&aim=true'"></div>
           <div class="ecard-brand">Microsoft</div>
           <div class="ecard-name">Surface Laptop 5</div>
           <div class="ecard-spec">13.5" PixelSense · Intel i5 · 8GB RAM · 256GB SSD · Windows 11</div>
@@ -1296,10 +1295,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-tablets">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ipad-pro11')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-11inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPad Pro M4 11"" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-11inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Pro M4 11"</div>
           <div class="ecard-spec">11" Ultra Retina XDR OLED · M4 Chip · 256GB · Wi-Fi + 5G</div>
@@ -1309,10 +1308,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Pro+M4+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ipad-pro13')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-13inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPad Pro M4 13"" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-13inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Pro M4 13"</div>
           <div class="ecard-spec">13" Ultra Retina XDR OLED · M4 Chip · 256GB · Thinnest iPad Ever</div>
@@ -1322,10 +1321,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Pro+M4+13+inch+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ipad-air')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-finish-select-gallery-202405-11inch-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPad Air M2 11"" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-finish-select-gallery-202405-11inch-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Air M2 11"</div>
           <div class="ecard-spec">11" Liquid Retina · M2 Chip · 128GB · Wi-Fi · All Colors</div>
@@ -1335,9 +1334,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+Air+M2+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ipad-10')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPad 10th Gen" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad 10th Gen</div>
           <div class="ecard-spec">10.9" Liquid Retina · A14 Bionic · 64GB · Wi-Fi · USB-C</div>
@@ -1347,10 +1346,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+iPad+10th+Gen+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-tabs9u')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/2307/gallery/global-galaxy-tab-s9-ultra-x910-sm-x910nzaaxfe-thumb-537171227?$344_344_PNG$" alt="Galaxy Tab S9 Ultra" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/2307/gallery/global-galaxy-tab-s9-ultra-x910-sm-x910nzaaxfe-thumb-537171227?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Tab S9 Ultra</div>
           <div class="ecard-spec">14.6" AMOLED 120Hz · Snapdragon 8 Gen 2 · 256GB · S Pen</div>
@@ -1360,9 +1359,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Tab+S9+Ultra+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-tabs9fe')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/2310/gallery/global-galaxy-tab-s9-fe-x510-sm-x510nzaaxfe-thumb-537894677?$344_344_PNG$" alt="Galaxy Tab S9 FE" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/2310/gallery/global-galaxy-tab-s9-fe-x510-sm-x510nzaaxfe-thumb-537894677?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Tab S9 FE</div>
           <div class="ecard-spec">10.9" TFT 90Hz · Exynos 1380 · 128GB · S Pen Included</div>
@@ -1372,9 +1371,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Tab+S9+FE+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-xipad6')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+          <div class="ecard-img"><img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/overview-img01.png" alt="Xiaomi Pad 6" loading="lazy" onerror="this.src='https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/overview-img01.png'"></div>
           <div class="ecard-brand">Xiaomi</div>
           <div class="ecard-name">Xiaomi Pad 6</div>
           <div class="ecard-spec">11" IPS 144Hz · Snapdragon 870 · 128GB · Fast Charge</div>
@@ -1391,10 +1390,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-smartwatches">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-aws10')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-46-aluminum-jetblack-nc-s10_VW_34FR+watch-face-46-aluminum-jetblack-s10_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple Watch Series 10" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-46-aluminum-jetblack-nc-s10_VW_34FR+watch-face-46-aluminum-jetblack-s10_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch Series 10</div>
           <div class="ecard-spec">46mm · Always-On LTPO OLED · S10 Chip · GPS + Cellular</div>
@@ -1404,10 +1403,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+Series+10+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-awu2')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-49-titanium-natural-s9-ultra2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple Watch Ultra 2" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-49-titanium-natural-s9-ultra2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch Ultra 2</div>
           <div class="ecard-spec">49mm Titanium · MicroLED · 36hr Battery · Dual Frequency GPS</div>
@@ -1417,9 +1416,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+Ultra+2+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-awse')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-40-aluminum-midnight-nc-se-se2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple Watch SE 2nd Gen" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-40-aluminum-midnight-nc-se-se2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch SE 2nd Gen</div>
           <div class="ecard-spec">40mm · Retina LTPO OLED · S8 Chip · Crash Detection</div>
@@ -1429,10 +1428,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Apple+Watch+SE+2nd+Gen+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-gw7')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch7-l300-sm-l300nzsaxfe-thumb-541833327?$344_344_PNG$" alt="Galaxy Watch 7" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch7-l300-sm-l300nzsaxfe-thumb-541833327?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Watch 7</div>
           <div class="ecard-spec">44mm · Super AMOLED · Exynos W1000 · 40hr Battery · BioActive</div>
@@ -1442,9 +1441,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Watch+7+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-gwu')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch-ultra-l705-sm-l705fzsaxfe-thumb-541858534?$344_344_PNG$" alt="Galaxy Watch Ultra" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch-ultra-l705-sm-l705fzsaxfe-thumb-541858534?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Watch Ultra</div>
           <div class="ecard-spec">47mm Titanium · AMOLED · Dual GPS · 60hr Battery · IP68</div>
@@ -1454,9 +1453,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Watch+Ultra+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-xws3')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-watch-s3/overview-img01.png" alt="Xiaomi Watch S3" loading="lazy" onerror="this.src='https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-watch-s3/overview-img01.png'"></div>
           <div class="ecard-brand">Xiaomi</div>
           <div class="ecard-name">Xiaomi Watch S3</div>
           <div class="ecard-spec">1.43" AMOLED · Sapphire Glass · 15-day Battery · SpO2 · GPS</div>
@@ -1466,9 +1465,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Xiaomi+Watch+S3+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-hwgt4')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
+          <div class="ecard-img"><img src="https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt4-46mm/overview/huawei-watch-gt4-46mm-phoinix-brown-leather-kv.jpg" alt="Huawei Watch GT 4" loading="lazy" onerror="this.src='https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt4-46mm/overview/huawei-watch-gt4-46mm-phoinix-brown-leather-kv.jpg'"></div>
           <div class="ecard-brand">Huawei</div>
           <div class="ecard-name">Huawei Watch GT 4</div>
           <div class="ecard-spec">46mm · AMOLED · 14-day Battery · ECG · SpO2 · GPS</div>
@@ -1485,10 +1484,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-tvs">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-sqled55')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/QE55Q80CATXXU/gallery/global-qled-q80c-qe55q80catxxu-thumb-536841882?$344_344_PNG$" alt="Samsung QLED 4K 55"" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/QE55Q80CATXXU/gallery/global-qled-q80c-qe55q80catxxu-thumb-536841882?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Samsung QLED 4K 55"</div>
           <div class="ecard-spec">55" QLED 4K · 120Hz · HDR10+ · Smart TV · 4 HDMI · WiFi 6</div>
@@ -1498,10 +1497,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Samsung+QLED+55+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-soled65')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/QE65S90CATXXU/gallery/global-oled-s90c-qe65s90catxxu-thumb-536853543?$344_344_PNG$" alt="Samsung OLED 4K 65"" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/QE65S90CATXXU/gallery/global-oled-s90c-qe65s90catxxu-thumb-536853543?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Samsung OLED 4K 65"</div>
           <div class="ecard-spec">65" OLED 4K · 144Hz · Tizen OS · Gaming Hub · 4K Upscaling</div>
@@ -1511,9 +1510,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Samsung+OLED+65+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-lgoled55')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://gscs-b2c.lge.com/downloadFile?fileId=oFLqQGKKc4nMgJgNpzWJSA" alt="LG OLED C4 55"" loading="lazy" onerror="this.src='https://gscs-b2c.lge.com/downloadFile?fileId=oFLqQGKKc4nMgJgNpzWJSA'"></div>
           <div class="ecard-brand">LG</div>
           <div class="ecard-name">LG OLED C4 55"</div>
           <div class="ecard-spec">55" OLED evo · α9 AI 4K Gen7 · 120Hz · Dolby Vision · G-Sync</div>
@@ -1523,9 +1522,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+LG+OLED+C4+55+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-lgnano50')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://gscs-b2c.lge.com/downloadFile?fileId=rAKdHsKpjN9ORcHnfVAVgA" alt="LG NanoCell 4K 50"" loading="lazy" onerror="this.src='https://gscs-b2c.lge.com/downloadFile?fileId=rAKdHsKpjN9ORcHnfVAVgA'"></div>
           <div class="ecard-brand">LG</div>
           <div class="ecard-name">LG NanoCell 4K 50"</div>
           <div class="ecard-spec">50" NanoCell · 4K · 60Hz · HDR · ThinQ AI · 3 HDMI</div>
@@ -1535,9 +1534,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+LG+NanoCell+50+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-sonybravia')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://www.sony.com/image/f0c82f1e89f9c1ea06e8a9cdf2b06a9b?fmt=pjpeg&wid=400&hei=400" alt="Sony Bravia XR A80L 55"" loading="lazy" onerror="this.src='https://www.sony.com/image/f0c82f1e89f9c1ea06e8a9cdf2b06a9b?fmt=pjpeg&wid=400&hei=400'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony Bravia XR A80L 55"</div>
           <div class="ecard-spec">55" OLED · XR Cognitive Processor · 4K 120Hz · Dolby Atmos</div>
@@ -1547,9 +1546,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+Bravia+OLED+55+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-hisense65')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
+          <div class="ecard-img"><img src="https://images.hisense.com/images/products/global/U8H/55U8H/gallery/U8H-55-gallery-1.png" alt="Hisense ULED 4K 65"" loading="lazy" onerror="this.src='https://images.hisense.com/images/products/global/U8H/55U8H/gallery/U8H-55-gallery-1.png'"></div>
           <div class="ecard-brand">Hisense</div>
           <div class="ecard-name">Hisense ULED 4K 65"</div>
           <div class="ecard-spec">65" ULED · 4K 60Hz · Dolby Vision · VIDAA Smart OS · 3 HDMI</div>
@@ -1566,10 +1565,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-gaming">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ps5slim')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-product-thumbnail-01-en-14sep23?$facebook$" alt="PlayStation 5 Slim" loading="lazy" onerror="this.src='https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-product-thumbnail-01-en-14sep23?$facebook$'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PlayStation 5 Slim</div>
           <div class="ecard-spec">PS5 Slim · Disc Edition · 1TB SSD · 4K 120fps · Ray Tracing</div>
@@ -1579,9 +1578,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+Slim+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-ps5digital')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-digital-product-thumbnail-01-en-14sep23?$facebook$" alt="PlayStation 5 Digital" loading="lazy" onerror="this.src='https://gmedia.playstation.com/is/image/SIEPDC/ps5-digital-product-thumbnail-01-en-14sep23?$facebook$'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PlayStation 5 Digital</div>
           <div class="ecard-spec">PS5 Digital · No Disc · 1TB SSD · 4K · DualSense Controller</div>
@@ -1591,10 +1590,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+Digital+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-xboxx')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://news.xbox.com/en-us/wp-content/uploads/sites/2/2020/05/Xbox_Series_X_Console-1.png" alt="Xbox Series X" loading="lazy" onerror="this.src='https://news.xbox.com/en-us/wp-content/uploads/sites/2/2020/05/Xbox_Series_X_Console-1.png'"></div>
           <div class="ecard-brand">Microsoft</div>
           <div class="ecard-name">Xbox Series X</div>
           <div class="ecard-spec">4K 120fps · 1TB SSD · Xbox Game Pass · Quick Resume · 4K Blu-ray</div>
@@ -1604,10 +1603,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Xbox+Series+X+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-nswoled')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/switch/site-design-update/hardware/switch-oled-model/white-set/hardware-photo01" alt="Nintendo Switch OLED" loading="lazy" onerror="this.src='https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/switch/site-design-update/hardware/switch-oled-model/white-set/hardware-photo01'"></div>
           <div class="ecard-brand">Nintendo</div>
           <div class="ecard-name">Nintendo Switch OLED</div>
           <div class="ecard-spec">7" OLED Screen · Portable + TV Mode · 64GB · Joy-Con Controllers</div>
@@ -1617,9 +1616,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Nintendo+Switch+OLED+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-dualsense')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://gmedia.playstation.com/is/image/SIEPDC/dualsense-wireless-controller-white-product-thumbnail-01-en-14sep23?$facebook$" alt="PS5 DualSense Controller" loading="lazy" onerror="this.src='https://gmedia.playstation.com/is/image/SIEPDC/dualsense-wireless-controller-white-product-thumbnail-01-en-14sep23?$facebook$'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PS5 DualSense Controller</div>
           <div class="ecard-spec">Haptic Feedback · Adaptive Triggers · Built-in Mic · USB-C · Multiple Colors</div>
@@ -1629,9 +1628,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+PS5+DualSense+Controller+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-rogally')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+          <div class="ecard-img"><img src="https://dlcdnwebimgs.asus.com/gain/29E40B4B-B8FC-4B6F-BB42-E5DBCEDD49EB/fwebp" alt="ROG Ally X Gaming Handheld" loading="lazy" onerror="this.src='https://dlcdnwebimgs.asus.com/gain/29E40B4B-B8FC-4B6F-BB42-E5DBCEDD49EB/fwebp'"></div>
           <div class="ecard-brand">ASUS</div>
           <div class="ecard-name">ROG Ally X Gaming Handheld</div>
           <div class="ecard-spec">7" FHD 120Hz · AMD Z1 Extreme · 24GB RAM · 1TB SSD · Windows 11</div>
@@ -1648,10 +1647,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-audio">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-app2')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=90" alt="AirPods Pro 2nd Gen" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods Pro 2nd Gen</div>
           <div class="ecard-spec">ANC · Transparency · H2 Chip · USB-C · 6hr + 24hr Battery</div>
@@ -1661,10 +1660,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+Pro+2+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-app4')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-4-select-202409?wid=400&hei=400&fmt=jpeg&qlt=90" alt="AirPods 4" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-4-select-202409?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods 4</div>
           <div class="ecard-spec">H2 Chip · Open-Ear · Adaptive Audio · USB-C · ANC Option</div>
@@ -1674,9 +1673,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+4+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-apmax')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="ecard-img"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-202409-midnight?wid=400&hei=400&fmt=jpeg&qlt=90" alt="AirPods Max" loading="lazy" onerror="this.src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-202409-midnight?wid=400&hei=400&fmt=jpeg&qlt=90'"></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods Max</div>
           <div class="ecard-spec">Over-Ear · Premium ANC · Spatial Audio · H1 Chip · USB-C · 20hr Battery</div>
@@ -1686,10 +1685,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+AirPods+Max+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-buds3p')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="ecard-img"><img src="https://images.samsung.com/is/image/samsung/p6pim/global/2407/gallery/global-galaxy-buds3-pro-r630-sm-r630nzaaxfe-thumb-542177218?$344_344_PNG$" alt="Galaxy Buds3 Pro" loading="lazy" onerror="this.src='https://images.samsung.com/is/image/samsung/p6pim/global/2407/gallery/global-galaxy-buds3-pro-r630-sm-r630nzaaxfe-thumb-542177218?$344_344_PNG$'"></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Buds3 Pro</div>
           <div class="ecard-spec">ANC · 360° Audio · 24-bit Hi-Fi · Blade Design · 6hr Battery</div>
@@ -1699,9 +1698,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Galaxy+Buds3+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-sonywh')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+          <div class="ecard-img"><img src="https://www.sony.com/image/5d02da5df552836db894cead731a7b8a?fmt=pjpeg&wid=400&hei=400" alt="Sony WH-1000XM5" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony WH-1000XM5</div>
           <div class="ecard-spec">Industry Best ANC · 30hr Battery · Multipoint · Hi-Res Audio</div>
@@ -1711,9 +1710,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+WH1000XM5+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-jbl5')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r="1" fill="var(--g2)"/></svg></div>
+          <div class="ecard-img"><img src="https://images.ctfassets.net/v3n26e09qg4r/7cFQnTz4OMGHuqVS0xXa5r/56c9e0c2c2c6c2b0c2c6c2b0/JBL_CHARGE5_HERO_BLK.png" alt="JBL Charge 5" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80'"></div>
           <div class="ecard-brand">JBL</div>
           <div class="ecard-name">JBL Charge 5</div>
           <div class="ecard-spec">Portable Bluetooth Speaker · IP67 Waterproof · 20hr · PartyBoost · USB-C</div>
@@ -1730,10 +1729,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
     <div class="elec-panel" id="elec-cameras">
       <div class="elec-grid">
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-sonya7iv')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://www.sony.com/image/0d285e3f3e0c76e4dab5a2c4f8f2e0b5?fmt=pjpeg&wid=400&hei=400" alt="Sony Alpha A7 IV" loading="lazy" onerror="this.src='https://www.sony.com/image/0d285e3f3e0c76e4dab5a2c4f8f2e0b5?fmt=pjpeg&wid=400&hei=400'"></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony Alpha A7 IV</div>
           <div class="ecard-spec">33MP Full Frame · 4K 60fps · In-Body Stabilization · Dual SD · WiFi</div>
@@ -1743,10 +1742,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Sony+A7+IV+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-canonr50')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://www.bhphotovideo.com/images/images2500x2500/canon_5811c002_eos_r50_mirrorless_camera_1715703.jpg" alt="Canon EOS R50" loading="lazy" onerror="this.src='https://www.bhphotovideo.com/images/images2500x2500/canon_5811c002_eos_r50_mirrorless_camera_1715703.jpg'"></div>
           <div class="ecard-brand">Canon</div>
           <div class="ecard-name">Canon EOS R50</div>
           <div class="ecard-spec">24.2MP APS-C · 4K 30fps · DIGIC X · Dual Pixel AF · WiFi + Bluetooth</div>
@@ -1756,9 +1755,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Canon+EOS+R50+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-nikonz50')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://www.nikon.com.au/content/dam/nikon/products/cameras/mirrorless/z-50-ii/z50ii_kitlens16-50_front_blk.png" alt="Nikon Z50 II" loading="lazy" onerror="this.src='https://www.nikon.com.au/content/dam/nikon/products/cameras/mirrorless/z-50-ii/z50ii_kitlens16-50_front_blk.png'"></div>
           <div class="ecard-brand">Nikon</div>
           <div class="ecard-name">Nikon Z50 II</div>
           <div class="ecard-spec">20.9MP · 4K 30fps · Subject Tracking AF · Vlogger Flip Screen</div>
@@ -1768,10 +1767,10 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+Nikon+Z50+II+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-gopro13')" style="cursor:pointer">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://gopro.com/content/dam/help/hero13-black/HERO13Black_Front.png" alt="GoPro HERO 13 Black" loading="lazy" onerror="this.src='https://gopro.com/content/dam/help/hero13-black/HERO13Black_Front.png'"></div>
           <div class="ecard-brand">GoPro</div>
           <div class="ecard-name">GoPro HERO 13 Black</div>
           <div class="ecard-spec">5.3K 60fps · HyperSmooth 7.0 · Waterproof · Magnetic Mounts · 5.3K</div>
@@ -1781,9 +1780,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+GoPro+Hero+13+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-dji4pro')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://store.dji.com/media/catalog/product/M/i/Mini_4_Pro_Overview_Combo_1_.jpg" alt="DJI Mini 4 Pro Drone" loading="lazy" onerror="this.src='https://store.dji.com/media/catalog/product/M/i/Mini_4_Pro_Overview_Combo_1_.jpg'"></div>
           <div class="ecard-brand">DJI</div>
           <div class="ecard-name">DJI Mini 4 Pro Drone</div>
           <div class="ecard-spec">4K 60fps HDR · 34min Flight · Omnidirectional Obstacle Sensing · 20km</div>
@@ -1793,9 +1792,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
           <a class="ecard-wa" href="https://wa.me/923319946546?text=Assalamu+Alaikum%2C+DJI+Mini+4+Pro+chahiye" target="_blank">📲 WhatsApp Order</a>
         </div>
 
-        <div class="ecard reveal">
+        <div class="ecard reveal" onclick="openItemModal('elec-instax12')" style="cursor:pointer">
           <div class="ecard-accent"></div>
-          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="ecard-img"><img src="https://fujifilm-x.com/global/products/cameras/instax-mini-12/assets/img/top/mv_pc.jpg" alt="Fujifilm Instax Mini 12" loading="lazy" onerror="this.src='https://fujifilm-x.com/global/products/cameras/instax-mini-12/assets/img/top/mv_pc.jpg'"></div>
           <div class="ecard-brand">Instax</div>
           <div class="ecard-name">Fujifilm Instax Mini 12</div>
           <div class="ecard-spec">Instant Film Camera · Auto Exposure · Close-Up Mode · 5 Colors</div>
@@ -3009,6 +3008,108 @@ function pmAddToCart(){
   closePM();
   openCart();
 }
+// ─── ITEM MODAL (Electronics + Accessories) ───
+const ITEM_CATALOG = {
+  // ACCESSORIES
+  'acc-charger':   {name:'iPhone Charger 20W',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHJA3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1603911344000',price:1800,origPrice:2200,desc:'Original Apple 20W USB-C Fast Charger. Sirf PTA approved iPhones ke liye perfect. Quick charge support ke saath aata hai.',specs:'20W USB-C · Fast Charge · Compact Design · 100-240V Input'},
+  'acc-cable-lgt': {name:'USB-C to Lightning Cable',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQGH2?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1670621929162',price:1500,origPrice:1900,desc:'Original Apple braided cable 1m. Fast charging support ke saath, iPhone 7 se 15 tak compatible.',specs:'1 Meter · Braided · Fast Charge · iPhone 7–15'},
+  'acc-cable-usbc':{name:'USB-C to USB-C Cable',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MUF72?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1686843762966',price:1200,origPrice:1600,desc:'iPhone 15 series ke liye original USB-C cable. 60W fast charging support. Durable braided design.',specs:'1 Meter · 60W · USB-C · iPhone 15 Series'},
+  'acc-cover':     {name:'iPhone Silicone Cover',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MT0E3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1693010077',price:800,origPrice:1200,desc:'Premium quality silicone case with camera protection. Soft touch feel, har iPhone model ke liye available. Multiple colors.',specs:'All Models · Multiple Colors · Camera Protection · Soft Touch'},
+  'acc-leather':   {name:'Leather Case',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPRY3?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1660867314',price:1400,origPrice:2000,desc:'Premium leather finish case with MagSafe compatible design. Luxury look aur full protection ke saath.',specs:'MagSafe Compatible · iPhone 13/14/15 · Genuine Leather'},
+  'acc-glass':     {name:'Tempered Glass',brand:'Generic',category:'Accessories',img:'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&q=80',price:500,origPrice:800,desc:'9H hardness screen protector. Zero bubbles guarantee, fingerprint resistant, easy apply kit ke saath aata hai.',specs:'9H Hardness · All Models · Anti-Fingerprint · Easy Apply Kit'},
+  'acc-airpods':   {name:'AirPods / Earbuds',brand:'Apple',category:'Accessories',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=90',price:3500,origPrice:5000,desc:'Original Apple AirPods aur premium compatible earbuds. Crystal clear sound quality with wireless connectivity.',specs:'Wireless · Multiple Options · Crystal Audio · WhatsApp for price'},
+  'acc-powerbank': {name:'Power Bank 10000mAh',brand:'Generic',category:'Accessories',img:'https://images.unsplash.com/photo-1609692814858-f7cd2f0afa4f?w=400&h=400&fit=crop&q=80',price:2500,origPrice:3200,desc:'Compact fast-charging power bank with dual output. Sirf 1 charge mein iPhone 2-3 baar charge kar sakta hai.',specs:'10000mAh · 22.5W Fast Charge · Dual Output · Compact'},
+  // LAPTOPS
+  'elec-mb-air-m2':  {name:'MacBook Air M2',brand:'Apple',category:'Laptops',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=400&hei=400&fmt=jpeg&qlt=90',price:229999,origPrice:260000,desc:'Apple M2 chip ke saath fastest MacBook Air. 18 ghante ki battery life aur fanless design.',specs:'13.6" Liquid Retina · M2 Chip · 8GB RAM · 256GB SSD · 18hr Battery'},
+  'elec-mb-air-m3':  {name:'MacBook Air M3',brand:'Apple',category:'Laptops',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-starlight-select-202402?wid=400&hei=400&fmt=jpeg&qlt=90',price:279999,origPrice:310000,desc:'Latest M3 chip ke saath sab se powerful MacBook Air. Ultra-thin design aur exceptional performance.',specs:'13.6" Liquid Retina · M3 Chip · 8GB RAM · 256GB SSD · Latest 2024'},
+  'elec-mb-pro-m3':  {name:'MacBook Pro M3 Pro',brand:'Apple',category:'Laptops',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=400&hei=400&fmt=jpeg&qlt=90',price:449999,origPrice:490000,desc:'Professional grade performance M3 Pro chip ke saath. ProRes video, pro-level workflows ke liye best.',specs:'14" Liquid Retina XDR · M3 Pro Chip · 18GB RAM · 512GB SSD · ProRes'},
+  'elec-dell-xps':   {name:'Dell XPS 13 Plus',brand:'Dell',category:'Laptops',img:'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/media-gallery/silver/notebook-xps-13-9320-t-silver-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=400&hei=400&qlt=100',price:249999,origPrice:280000,desc:'Premium ultra-thin Windows laptop with OLED display. Intel 13th Gen i7 aur exceptional build quality.',specs:'13.4" OLED · Intel i7-13th Gen · 16GB RAM · 512GB SSD'},
+  'elec-hp-spectre': {name:'HP Spectre x360 14',brand:'HP',category:'Laptops',img:'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/knowledgebase/c08244900.png?wid=400&hei=400',price:219999,origPrice:250000,desc:'Versatile 2-in-1 laptop with OLED touchscreen. Tablet aur laptop dono modes mein use karein.',specs:'14" OLED 2in1 · Intel i7 · 16GB RAM · 1TB SSD · Touch'},
+  'elec-asus-rog':   {name:'ASUS ROG Strix G16',brand:'ASUS',category:'Laptops',img:'https://dlcdnwebimgs.asus.com/gain/D7E8B5C3-2A2E-4B3C-A9D8-E3B2E0D5F4C1/fwebp',price:379999,origPrice:420000,desc:'Ultimate gaming laptop with RTX 4070. 165Hz display aur Intel i9 processor ke saath unbeatable performance.',specs:'16" FHD 165Hz · Intel i9 · RTX 4070 · 16GB RAM · 1TB'},
+  'elec-thinkpad':   {name:'Lenovo ThinkPad X1 Carbon',brand:'Lenovo',category:'Laptops',img:'https://p4-ofp.static.pub/fes/cms/2022/09/13/0k0xhcyrphekgefh55jmqxgz3kqjiv764016.png',price:289999,origPrice:320000,desc:'Ultra-light business laptop with military-grade durability. Professional grade performance Intel i7 ke saath.',specs:'14" IPS · Intel i7 · 16GB RAM · 512GB SSD · Ultra Light'},
+  'elec-surface':    {name:'Surface Laptop 5',brand:'Microsoft',category:'Laptops',img:'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4OXSh?ver=5cc8&q=90&m=6&h=400&w=400&b=%23FFFFFF&f=jpg&o=f&aim=true',price:189999,origPrice:210000,desc:'Elegant Windows laptop with PixelSense touchscreen. Windows 11 pre-installed aur premium build quality.',specs:'13.5" PixelSense · Intel i5 · 8GB RAM · 256GB SSD · Windows 11'},
+  // TABLETS
+  'elec-ipad-pro11': {name:'iPad Pro M4 11"',brand:'Apple',category:'Tablets',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-11inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90',price:249999,origPrice:280000,desc:'Thinnest ever iPad with M4 chip aur Ultra Retina XDR OLED display. Professional grade performance.',specs:'11" Ultra Retina XDR OLED · M4 Chip · 256GB · Wi-Fi + 5G'},
+  'elec-ipad-pro13': {name:'iPad Pro M4 13"',brand:'Apple',category:'Tablets',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-13inch-silver-wifi?wid=400&hei=400&fmt=jpeg&qlt=90',price:329999,origPrice:370000,desc:'Largest iPad Pro with stunning OLED display. M4 chip ke saath pro-level multitasking aur creativity.',specs:'13" Ultra Retina XDR OLED · M4 Chip · 256GB · Thinnest iPad Ever'},
+  'elec-ipad-air':   {name:'iPad Air M2 11"',brand:'Apple',category:'Tablets',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-finish-select-gallery-202405-11inch-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90',price:169999,origPrice:190000,desc:'Powerful iPad Air with M2 chip. Multiple colors available, Liquid Retina display ke saath.',specs:'11" Liquid Retina · M2 Chip · 128GB · Wi-Fi · All Colors'},
+  'elec-ipad-10':    {name:'iPad 10th Gen',brand:'Apple',category:'Tablets',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi?wid=400&hei=400&fmt=jpeg&qlt=90',price:99999,origPrice:115000,desc:'Best value iPad with USB-C aur Liquid Retina display. A14 Bionic chip ke saath smooth performance.',specs:'10.9" Liquid Retina · A14 Bionic · 64GB · Wi-Fi · USB-C'},
+  'elec-tabs9u':     {name:'Galaxy Tab S9 Ultra',brand:'Samsung',category:'Tablets',img:'https://images.samsung.com/is/image/samsung/p6pim/global/2307/gallery/global-galaxy-tab-s9-ultra-x910-sm-x910nzaaxfe-thumb-537171227?$344_344_PNG$',price:279999,origPrice:310000,desc:'Ultimate Android tablet with 14.6" AMOLED display aur built-in S Pen. Snapdragon 8 Gen 2 powered.',specs:'14.6" AMOLED 120Hz · Snapdragon 8 Gen 2 · 256GB · S Pen'},
+  'elec-tabs9fe':    {name:'Galaxy Tab S9 FE',brand:'Samsung',category:'Tablets',img:'https://images.samsung.com/is/image/samsung/p6pim/global/2310/gallery/global-galaxy-tab-s9-fe-x510-sm-x510nzaaxfe-thumb-537894677?$344_344_PNG$',price:89999,origPrice:105000,desc:'Budget-friendly Samsung tablet with S Pen included. Exynos 1380 aur 90Hz display ke saath.',specs:'10.9" TFT 90Hz · Exynos 1380 · 128GB · S Pen Included'},
+  'elec-xipad6':     {name:'Xiaomi Pad 6',brand:'Xiaomi',category:'Tablets',img:'https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/overview-img01.png',price:69999,origPrice:82000,desc:'High refresh rate tablet at budget price. Snapdragon 870 aur 144Hz display ke saath smooth experience.',specs:'11" IPS 144Hz · Snapdragon 870 · 128GB · Fast Charge'},
+  // SMART WATCHES
+  'elec-aws10':      {name:'Apple Watch Series 10',brand:'Apple',category:'Smart Watches',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-46-aluminum-jetblack-nc-s10_VW_34FR+watch-face-46-aluminum-jetblack-s10_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90',price:99999,origPrice:115000,desc:'Latest Apple Watch with Always-On display aur S10 chip. GPS + Cellular model, health tracking features.',specs:'46mm · Always-On LTPO OLED · S10 Chip · GPS + Cellular'},
+  'elec-awu2':       {name:'Apple Watch Ultra 2',brand:'Apple',category:'Smart Watches',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-49-titanium-natural-s9-ultra2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90',price:189999,origPrice:210000,desc:'Most rugged Apple Watch with titanium case. Dual frequency GPS aur 36 ghante ki battery life.',specs:'49mm Titanium · MicroLED · 36hr Battery · Dual Frequency GPS'},
+  'elec-awse':       {name:'Apple Watch SE 2nd Gen',brand:'Apple',category:'Smart Watches',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-case-40-aluminum-midnight-nc-se-se2_VW_34FR?wid=400&hei=400&fmt=jpeg&qlt=90',price:55999,origPrice:65000,desc:'Best value Apple Watch with Crash Detection. S8 chip aur Retina LTPO OLED display.',specs:'40mm · Retina LTPO OLED · S8 Chip · Crash Detection'},
+  'elec-gw7':        {name:'Galaxy Watch 7',brand:'Samsung',category:'Smart Watches',img:'https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch7-l300-sm-l300nzsaxfe-thumb-541833327?$344_344_PNG$',price:69999,origPrice:80000,desc:'Advanced Samsung smartwatch with BioActive sensor. Wear OS ke saath Google apps support.',specs:'44mm · Super AMOLED · Exynos W1000 · 40hr Battery · BioActive'},
+  'elec-gwu':        {name:'Galaxy Watch Ultra',brand:'Samsung',category:'Smart Watches',img:'https://images.samsung.com/is/image/samsung/p6pim/global/2406/gallery/global-galaxy-watch-ultra-l705-sm-l705fzsaxfe-thumb-541858534?$344_344_PNG$',price:139999,origPrice:160000,desc:'Ultra-durable Samsung smartwatch with titanium build. 60 ghante ki battery aur dual GPS system.',specs:'47mm Titanium · AMOLED · Dual GPS · 60hr Battery · IP68'},
+  'elec-xws3':       {name:'Xiaomi Watch S3',brand:'Xiaomi',category:'Smart Watches',img:'https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-watch-s3/overview-img01.png',price:24999,origPrice:30000,desc:'Budget smartwatch with sapphire glass protection. 15-day battery life aur SpO2 health monitoring.',specs:'1.43" AMOLED · Sapphire Glass · 15-day Battery · SpO2 · GPS'},
+  'elec-hwgt4':      {name:'Huawei Watch GT 4',brand:'Huawei',category:'Smart Watches',img:'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt4-46mm/overview/huawei-watch-gt4-46mm-phoinix-brown-leather-kv.jpg',price:39999,origPrice:48000,desc:'Stylish smartwatch with 14-day battery aur ECG monitoring. Premium design aur advanced health features.',specs:'46mm · AMOLED · 14-day Battery · ECG · SpO2 · GPS'},
+  // SMART TVs
+  'elec-sqled55':    {name:'Samsung QLED 4K 55"',brand:'Samsung',category:'Smart TVs',img:'https://images.samsung.com/is/image/samsung/p6pim/global/QE55Q80CATXXU/gallery/global-qled-q80c-qe55q80catxxu-thumb-536841882?$344_344_PNG$',price:159999,origPrice:185000,desc:'Samsung QLED 4K Smart TV with HDR10+ aur 4 HDMI ports. Tizen OS ke saath smart features.',specs:'55" QLED 4K · 120Hz · HDR10+ · Smart TV · 4 HDMI · WiFi 6'},
+  'elec-soled65':    {name:'Samsung OLED 4K 65"',brand:'Samsung',category:'Smart TVs',img:'https://images.samsung.com/is/image/samsung/p6pim/global/QE65S90CATXXU/gallery/global-oled-s90c-qe65s90catxxu-thumb-536853543?$344_344_PNG$',price:349999,origPrice:390000,desc:'Premium OLED TV with 144Hz gaming mode. Best picture quality with self-lit pixels aur Gaming Hub.',specs:'65" OLED 4K · 144Hz · Tizen OS · Gaming Hub · 4K Upscaling'},
+  'elec-lgoled55':   {name:'LG OLED C4 55"',brand:'LG',category:'Smart TVs',img:'https://gscs-b2c.lge.com/downloadFile?fileId=oFLqQGKKc4nMgJgNpzWJSA',price:259999,origPrice:295000,desc:'Award-winning LG OLED TV with α9 AI processor. Dolby Vision aur Dolby Atmos support ke saath cinematic experience.',specs:'55" OLED evo · α9 AI 4K Gen7 · 120Hz · Dolby Vision · G-Sync'},
+  'elec-lgnano50':   {name:'LG NanoCell 4K 50"',brand:'LG',category:'Smart TVs',img:'https://gscs-b2c.lge.com/downloadFile?fileId=rAKdHsKpjN9ORcHnfVAVgA',price:109999,origPrice:130000,desc:'Budget-friendly 4K TV with NanoCell technology. ThinQ AI aur 3 HDMI ports ke saath complete package.',specs:'50" NanoCell · 4K · 60Hz · HDR · ThinQ AI · 3 HDMI'},
+  'elec-sonybravia': {name:'Sony Bravia XR A80L 55"',brand:'Sony',category:'Smart TVs',img:'https://www.sony.com/image/f0c82f1e89f9c1ea06e8a9cdf2b06a9b?fmt=pjpeg&wid=400&hei=400',price:289999,origPrice:320000,desc:'Sony premium OLED TV with XR Cognitive Processor. Dolby Atmos aur perfect black levels.',specs:'55" OLED · XR Cognitive Processor · 4K 120Hz · Dolby Atmos'},
+  'elec-hisense65':  {name:'Hisense ULED 4K 65"',brand:'Hisense',category:'Smart TVs',img:'https://images.hisense.com/images/products/global/U8H/55U8H/gallery/U8H-55-gallery-1.png',price:119999,origPrice:140000,desc:'Value-for-money 65" 4K TV with ULED technology. VIDAA Smart OS aur Dolby Vision support.',specs:'65" ULED · 4K 60Hz · Dolby Vision · VIDAA Smart OS · 3 HDMI'},
+  // GAMING
+  'elec-ps5slim':    {name:'PlayStation 5 Slim',brand:'Sony',category:'Gaming',img:'https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-product-thumbnail-01-en-14sep23?$facebook$',price:129999,origPrice:150000,desc:'Compact PS5 with disc drive. 4K gaming at 120fps with ray tracing. Latest exclusive titles ke saath.',specs:'PS5 Slim · Disc Edition · 1TB SSD · 4K 120fps · Ray Tracing'},
+  'elec-ps5digital': {name:'PlayStation 5 Digital',brand:'Sony',category:'Gaming',img:'https://gmedia.playstation.com/is/image/SIEPDC/ps5-digital-product-thumbnail-01-en-14sep23?$facebook$',price:109999,origPrice:125000,desc:'Digital-only PS5 at lower price. Same 4K performance aur DualSense controller ke saath.',specs:'PS5 Digital · No Disc · 1TB SSD · 4K · DualSense Controller'},
+  'elec-xboxx':      {name:'Xbox Series X',brand:'Microsoft',category:'Gaming',img:'https://news.xbox.com/en-us/wp-content/uploads/sites/2/2020/05/Xbox_Series_X_Console-1.png',price:119999,origPrice:138000,desc:'Microsoft flagship console with Xbox Game Pass. Quick Resume feature aur 4K Blu-ray player.',specs:'4K 120fps · 1TB SSD · Xbox Game Pass · Quick Resume · 4K Blu-ray'},
+  'elec-nswoled':    {name:'Nintendo Switch OLED',brand:'Nintendo',category:'Gaming',img:'https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/switch/site-design-update/hardware/switch-oled-model/white-set/hardware-photo01',price:59999,origPrice:70000,desc:'Portable gaming console with 7" OLED screen. TV mode aur handheld mode dono mein khel sako.',specs:'7" OLED Screen · Portable + TV Mode · 64GB · Joy-Con Controllers'},
+  'elec-dualsense':  {name:'PS5 DualSense Controller',brand:'Sony',category:'Gaming',img:'https://gmedia.playstation.com/is/image/SIEPDC/dualsense-wireless-controller-white-product-thumbnail-01-en-14sep23?$facebook$',price:14999,origPrice:18000,desc:'Next-gen controller with haptic feedback aur adaptive triggers. Built-in microphone aur USB-C charging.',specs:'Haptic Feedback · Adaptive Triggers · Built-in Mic · USB-C · Multiple Colors'},
+  'elec-rogally':    {name:'ROG Ally X Gaming Handheld',brand:'ASUS',category:'Gaming',img:'https://dlcdnwebimgs.asus.com/gain/29E40B4B-B8FC-4B6F-BB42-E5DBCEDD49EB/fwebp',price:149999,origPrice:170000,desc:'Powerful Windows gaming handheld with AMD Z1 Extreme. PC games on the go with 7" FHD display.',specs:'7" FHD 120Hz · AMD Z1 Extreme · 24GB RAM · 1TB SSD · Windows 11'},
+  // AUDIO
+  'elec-app2':       {name:'AirPods Pro 2nd Gen',brand:'Apple',category:'Audio',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=400&hei=400&fmt=jpeg&qlt=90',price:29999,origPrice:36000,desc:'Premium ANC earbuds with H2 chip. USB-C charging case aur 6 ghante ki battery life.',specs:'ANC · Transparency · H2 Chip · USB-C · 6hr + 24hr Battery'},
+  'elec-app4':       {name:'AirPods 4',brand:'Apple',category:'Audio',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-4-select-202409?wid=400&hei=400&fmt=jpeg&qlt=90',price:19999,origPrice:24000,desc:'Latest AirPods with H2 chip aur open-ear design. Adaptive Audio aur ANC option ke saath.',specs:'H2 Chip · Open-Ear · Adaptive Audio · USB-C · ANC Option'},
+  'elec-apmax':      {name:'AirPods Max',brand:'Apple',category:'Audio',img:'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-202409-midnight?wid=400&hei=400&fmt=jpeg&qlt=90',price:69999,origPrice:82000,desc:'Premium over-ear headphones with spatial audio. Best-in-class ANC aur H1 chip ke saath.',specs:'Over-Ear · Premium ANC · Spatial Audio · H1 Chip · USB-C · 20hr Battery'},
+  'elec-buds3p':     {name:'Galaxy Buds3 Pro',brand:'Samsung',category:'Audio',img:'https://images.samsung.com/is/image/samsung/p6pim/global/2407/gallery/global-galaxy-buds3-pro-r630-sm-r630nzaaxfe-thumb-542177218?$344_344_PNG$',price:24999,origPrice:30000,desc:'Premium Samsung earbuds with 24-bit Hi-Fi audio. Blade design aur 360-degree audio experience.',specs:'ANC · 360° Audio · 24-bit Hi-Fi · Blade Design · 6hr Battery'},
+  'elec-sonywh':     {name:'Sony WH-1000XM5',brand:'Sony',category:'Audio',img:'https://www.sony.com/image/5d02da5df552836db894cead731a7b8a?fmt=pjpeg&wid=400&hei=400',price:34999,origPrice:42000,desc:'Industry-leading noise cancelling headphones. 30 ghante ki battery aur multipoint connection.',specs:'ANC · 30hr Battery · Multipoint · Hi-Res Audio · Foldable'},
+  'elec-jbl5':       {name:'JBL Charge 5',brand:'JBL',category:'Audio',img:'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&q=80',price:12999,origPrice:16000,desc:'Waterproof Bluetooth speaker with 20 ghante ki battery. IP67 waterproof aur power bank feature ke saath.',specs:'IP67 Waterproof · 20hr Battery · PartyBoost · USB-C'},
+  // CAMERAS
+  'elec-sonya7iv':   {name:'Sony Alpha A7 IV',brand:'Sony',category:'Cameras',img:'https://www.sony.com/image/0d285e3f3e0c76e4dab5a2c4f8f2e0b5?fmt=pjpeg&wid=400&hei=400',price:399999,origPrice:450000,desc:'Full-frame mirrorless camera for professionals. 33MP sensor aur 4K 60fps video recording.',specs:'33MP Full Frame · 4K 60fps · In-Body Stabilization · Dual SD · WiFi'},
+  'elec-canonr50':   {name:'Canon EOS R50',brand:'Canon',category:'Cameras',img:'https://www.bhphotovideo.com/images/images2500x2500/canon_5811c002_eos_r50_mirrorless_camera_1715703.jpg',price:149999,origPrice:175000,desc:'Compact mirrorless camera for beginners aur content creators. 4K video aur Dual Pixel AF ke saath.',specs:'24.2MP APS-C · 4K 30fps · DIGIC X · Dual Pixel AF · WiFi + Bluetooth'},
+  'elec-nikonz50':   {name:'Nikon Z50 II',brand:'Nikon',category:'Cameras',img:'https://www.nikon.com.au/content/dam/nikon/products/cameras/mirrorless/z-50-ii/z50ii_kitlens16-50_front_blk.png',price:139999,origPrice:160000,desc:'Vlogger-friendly mirrorless camera with flip screen. Subject tracking AF aur 4K video.',specs:'20.9MP · 4K 30fps · Subject Tracking AF · Vlogger Flip Screen'},
+  'elec-gopro13':    {name:'GoPro HERO 13 Black',brand:'GoPro',category:'Cameras',img:'https://gopro.com/content/dam/help/hero13-black/HERO13Black_Front.png',price:89999,origPrice:105000,desc:'Ultimate action camera with HyperSmooth 7.0. Waterproof aur magnetic mounts ke saath adventures capture karo.',specs:'5.3K 60fps · HyperSmooth 7.0 · Waterproof · Magnetic Mounts'},
+  'elec-dji4pro':    {name:'DJI Mini 4 Pro Drone',brand:'DJI',category:'Cameras',img:'https://store.dji.com/media/catalog/product/M/i/Mini_4_Pro_Overview_Combo_1_.jpg',price:179999,origPrice:205000,desc:'Compact drone with 4K HDR video. 34-minute flight time aur omnidirectional obstacle sensing.',specs:'4K 60fps HDR · 34min Flight · Omnidirectional Obstacle Sensing · 20km'},
+  'elec-instax12':   {name:'Fujifilm Instax Mini 12',brand:'Fujifilm',category:'Cameras',img:'https://fujifilm-x.com/global/products/cameras/instax-mini-12/assets/img/top/mv_pc.jpg',price:14999,origPrice:18000,desc:'Fun instant film camera for parties aur events. Auto exposure aur close-up mode ke saath.',specs:'Instant Film Camera · Auto Exposure · Close-Up Mode · 5 Colors'},
+};
+
+function openItemModal(itemId) {
+  const item = ITEM_CATALOG[itemId];
+  if (!item) return;
+  const disc = item.origPrice ? Math.round((1 - item.price / item.origPrice) * 100) : 0;
+  const waText = encodeURIComponent('Assalamu Alaikum, mujhe ye chahiye:\n\n🛍️ ' + item.name + '\n💰 Price: Rs. ' + item.price.toLocaleString() + '\n\nPlease confirm availability.');
+
+  document.getElementById('pm-main-img').src = item.img;
+  document.getElementById('pm-main-img').alt = item.name;
+  document.getElementById('pm-thumbs').innerHTML =
+    '<div class="pm-thumb active"><img src="' + item.img + '" alt="' + item.name + '" onerror="this.parentElement.textContent='🛍️'"></div>';
+
+  document.getElementById('pm-right').innerHTML =
+    '<div class="pm-category">' + item.brand + ' · ' + item.category + '</div>' +
+    '<h2 class="pm-name">' + item.name + '</h2>' +
+    '<div class="pm-stars"><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span> &nbsp;<span style="font-size:12px">5.0 (Verified)</span></div>' +
+    '<div class="pm-stock-badge"><div class="pm-stock-dot"></div>In Stock — Available</div>' +
+    '<p class="pm-desc">' + item.desc + '</p>' +
+    '<div style="background:rgba(200,164,0,0.06);border:1px solid rgba(200,164,0,0.18);border-radius:10px;padding:12px 14px;margin-bottom:16px">' +
+      '<div style="font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Specifications</div>' +
+      '<div style="font-size:13px;color:var(--t2);line-height:1.7">' + item.specs.split(' · ').map(s => '✓ ' + s).join('<br>') + '</div>' +
+    '</div>' +
+    '<div class="pm-price-row">' +
+      '<div class="pm-price">Rs. ' + item.price.toLocaleString() + '</div>' +
+      (item.origPrice ? '<div class="pm-orig">Rs. ' + item.origPrice.toLocaleString() + '</div>' : '') +
+      (disc > 0 ? '<div class="pm-disc">-' + disc + '%</div>' : '') +
+    '</div>' +
+    '<a class="pm-wa-btn" href="https://wa.me/923319946546?text=' + waText + '" target="_blank" style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;background:#22c55e;color:#fff;padding:15px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;transition:all .18s" onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">' +
+      '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>' +
+      'Order via WhatsApp' +
+    '</a>';
+
+  document.getElementById('pm-veil').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+
 
 // ─── BRAND PHONE DATA WITH IMAGES ───
 const BRAND_PHONES = {
@@ -3583,23 +3684,78 @@ function handleSearch(q){
   const dd = document.getElementById('searchDropdown');
   q = q.trim().toLowerCase();
   if(!q){ dd.classList.remove('show'); dd.innerHTML=''; return; }
-  const results = PHONES.filter(p=>
+
+  // 1. iPhones from PHONES array
+  const phoneResults = PHONES.filter(p=>
     p.name.toLowerCase().includes(q) ||
     p.storage.toLowerCase().includes(q) ||
     (p.desc && p.desc.toLowerCase().includes(q)) ||
     p.pta.toLowerCase().includes(q)
-  ).slice(0,6);
-  if(!results.length){
-    dd.innerHTML = `<div class="search-empty">No results for "${q}"</div>`;
-  } else {
-    dd.innerHTML = results.map(p=>`
-      <div class="search-item" onclick="openProductModal('${p.id}');closeSearch()">
-        <img src="${p.colors[0].img}" alt="${p.name}" onerror="this.style.display='none'">
+  ).slice(0,4).map(p=>({
+    html:`<div class="search-item" onclick="openProductModal('${p.id}');closeSearch()">
+      <img src="${p.colors[0].img}" alt="${p.name}" onerror="this.style.display='none'">
+      <div class="search-item-info">
+        <div class="search-item-name">${p.name} ${p.storage}</div>
+        <div class="search-item-price">Rs. ${p.price.toLocaleString()}</div>
+      </div>
+    </div>`
+  }));
+
+  // 2. Accessories from DOM
+  const accResults = [];
+  document.querySelectorAll('.acc-card').forEach(function(card){
+    const nameEl = card.querySelector('.acc-name');
+    const priceEl = card.querySelector('.acc-price');
+    const descEl = card.querySelector('.acc-desc');
+    const emojiEl = card.querySelector('.acc-emoji');
+    if(!nameEl) return;
+    const name = nameEl.textContent;
+    const price = priceEl ? priceEl.textContent : '';
+    const desc = descEl ? descEl.textContent : '';
+    if(name.toLowerCase().includes(q) || desc.toLowerCase().includes(q)){
+      const waLink = card.querySelector('a.acc-wa');
+      const href = waLink ? waLink.href : 'https://wa.me/923319946546';
+      const emoji = emojiEl ? emojiEl.textContent : '\uD83D\uDED2';
+      accResults.push({html:`<div class="search-item" onclick="window.open('${href}','_blank');closeSearch()">
+        <div style="width:40px;height:40px;background:rgba(200,164,0,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">${emoji}</div>
         <div class="search-item-info">
-          <div class="search-item-name">${p.name} ${p.storage}</div>
-          <div class="search-item-price">Rs. ${p.price.toLocaleString()}</div>
+          <div class="search-item-name">${name}</div>
+          <div class="search-item-price">${price}</div>
         </div>
-      </div>`).join('');
+      </div>`});
+    }
+  });
+
+  // 3. Electronics from DOM
+  const elecResults = [];
+  document.querySelectorAll('.ecard').forEach(function(card){
+    const nameEl = card.querySelector('.ecard-name');
+    const brandEl = card.querySelector('.ecard-brand');
+    const specEl = card.querySelector('.ecard-spec');
+    const priceEl = card.querySelector('.ecard-price');
+    if(!nameEl) return;
+    const name = nameEl.textContent;
+    const brand = brandEl ? brandEl.textContent : '';
+    const spec = specEl ? specEl.textContent : '';
+    const price = priceEl ? priceEl.textContent : '';
+    if(name.toLowerCase().includes(q) || brand.toLowerCase().includes(q) || spec.toLowerCase().includes(q)){
+      const waLink = card.querySelector('a.ecard-wa');
+      const href = waLink ? waLink.href : 'https://wa.me/923319946546';
+      elecResults.push({html:`<div class="search-item" onclick="window.open('${href}','_blank');closeSearch()">
+        <div style="width:40px;height:40px;background:rgba(200,164,0,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">\uD83D\uDCBB</div>
+        <div class="search-item-info">
+          <div class="search-item-name">${brand} ${name}</div>
+          <div class="search-item-price">${price}</div>
+        </div>
+      </div>`});
+    }
+  });
+
+  const allResults = [...phoneResults, ...accResults, ...elecResults].slice(0,8);
+  if(!allResults.length){
+    dd.innerHTML = '<div class="search-empty">No results for "'+q+'"</div>';
+  } else {
+    dd.innerHTML = allResults.map(function(r){ return r.html; }).join('');
   }
   dd.classList.add('show');
 }
