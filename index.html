@@ -71,6 +71,14 @@ nav.scrolled{background:rgba(6,6,8,0.97);border-color:var(--bor)}
 .hstat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--g2);line-height:1}
 .hstat-lbl{font-size:10.5px;color:var(--t3);text-transform:uppercase;letter-spacing:1.2px;margin-top:5px;font-weight:600}
 
+/* ── CATEGORY QUICK NAV ── */
+.cat-quicknav{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:10px;flex-wrap:nowrap;justify-content:center;width:auto;max-width:calc(100vw - 40px);animation:fadeUp .7s .1s ease both}
+.cqn-item{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:8px 16px 8px 10px;text-decoration:none;color:var(--t2);font-size:12px;font-weight:700;white-space:nowrap;transition:all .2s;letter-spacing:0.2px;cursor:pointer}
+.cqn-item:hover,.cqn-item.active-cat{background:rgba(200,164,0,0.12);border-color:rgba(200,164,0,0.35);color:var(--g2)}
+.cqn-icon{width:24px;height:24px;border-radius:50%;background:rgba(200,164,0,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+@media(max-width:680px){.cat-quicknav{gap:6px}.cqn-item{font-size:11px;padding:7px 12px 7px 8px}.cqn-icon{width:20px;height:20px;font-size:10px}}
+@media(max-width:480px){.cat-quicknav{gap:5px;top:10px}.cqn-item{padding:6px 10px 6px 7px}}
+
 /* ── HERO PHONE IMAGE ── */
 .hero-right{display:flex;justify-content:center;align-items:center;animation:fadeRight .9s .2s ease both}
 @keyframes fadeRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
@@ -483,6 +491,15 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 .foot-copy{font-size:12px;color:var(--t3)}
 
 
+/* ── ELECTRONICS CATEGORY BANNER ── */
+.elec-cat-banner{display:flex;gap:10px;flex-wrap:wrap;margin:2rem 0 2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(200,164,0,0.05),rgba(255,255,255,0.02));border:1px solid rgba(200,164,0,0.12);border-radius:20px}
+.ecb-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:80px;padding:14px 8px;border-radius:14px;cursor:pointer;transition:all .2s;color:var(--t3);border:1px solid transparent}
+.ecb-item:hover,.ecb-item.active{background:rgba(200,164,0,0.1);border-color:rgba(200,164,0,0.25);color:var(--g2)}
+.ecb-icon{width:52px;height:52px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.ecb-item:hover .ecb-icon,.ecb-item.active .ecb-icon{background:rgba(200,164,0,0.1);border-color:rgba(200,164,0,0.25)}
+.ecb-item span{font-size:11px;font-weight:700;text-align:center;letter-spacing:0.2px;white-space:nowrap}
+@media(max-width:600px){.elec-cat-banner{gap:6px;padding:1rem}.ecb-item{min-width:70px;padding:10px 4px}.ecb-icon{width:44px;height:44px}.ecb-item span{font-size:10px}}
+
 /* ── ELECTRONICS SECTION ── */
 #electronics{background:var(--dark)}
 .elec-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:2.2rem 0 1.8rem}
@@ -498,7 +515,9 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 .ecard-badge{position:absolute;top:14px;right:14px;font-size:9.5px;font-weight:900;padding:4px 8px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase;z-index:2}
 .ecard-badge.new-b{background:var(--g);color:#000}
 .ecard-badge.hot-b{background:var(--red);color:#fff}
-.ecard-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:64px}
+.ecard-img{width:100%;height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;background:linear-gradient(135deg,rgba(200,164,0,0.04),rgba(255,255,255,0.02));border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
+.ecard-img svg{width:72px;height:72px;opacity:0.85;transition:transform .3s ease}
+.ecard:hover .ecard-img svg{transform:scale(1.08) translateY(-4px)}
 .ecard-brand{font-size:9.5px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
 .ecard-name{font-weight:800;font-size:15px;color:var(--txt);margin-bottom:3px;line-height:1.25}
 .ecard-spec{font-size:12px;color:var(--t3);margin-bottom:10px;line-height:1.5}
@@ -818,6 +837,17 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid-bg"></div>
+
+  <!-- CATEGORY QUICK NAV — fills the empty top space -->
+  <div class="cat-quicknav">
+    <a href="#phones" class="cqn-item"><span class="cqn-icon">📱</span>Phones</a>
+    <a href="#electronics" class="cqn-item"><span class="cqn-icon">💻</span>Electronics</a>
+    <a href="#accessories" class="cqn-item"><span class="cqn-icon">🎧</span>Accessories</a>
+    <a href="#brands" class="cqn-item"><span class="cqn-icon">🏷️</span>All Brands</a>
+    <a href="#deals" class="cqn-item"><span class="cqn-icon">🔥</span>Deals</a>
+    <a href="#services" class="cqn-item"><span class="cqn-icon">🔧</span>Services</a>
+  </div>
+
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-pill"><div class="pill-dot"></div>Rawalpindi's #1 Phone Store</div>
@@ -1112,6 +1142,38 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
     </div>
 
+    <!-- ELECTRONICS CATEGORY ICONS BANNER -->
+    <div class="elec-cat-banner reveal">
+      <div class="ecb-item" onclick="showElecTab('laptops',document.querySelectorAll('.etab')[0]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <span>Laptops</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('tablets',document.querySelectorAll('.etab')[1]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+        <span>Tablets</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('smartwatches',document.querySelectorAll('.etab')[2]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2"/></svg></div>
+        <span>Smart Watches</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('tvs',document.querySelectorAll('.etab')[3]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="currentColor" opacity="0.2"/></svg></div>
+        <span>Smart TVs</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('gaming',document.querySelectorAll('.etab')[4]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1.2" fill="currentColor"/><circle cx="17" cy="13" r="1.2" fill="currentColor"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
+        <span>Gaming</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('audio',document.querySelectorAll('.etab')[5]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+        <span>Audio</span>
+      </div>
+      <div class="ecb-item" onclick="showElecTab('cameras',document.querySelectorAll('.etab')[6]);this.closest('.elec-cat-banner').querySelectorAll('.ecb-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')">
+        <div class="ecb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span>Cameras</span>
+      </div>
+    </div>
+
     <!-- TABS -->
     <div class="elec-tabs reveal">
       <button class="etab active" onclick="showElecTab('laptops',this)">💻 Laptops</button>
@@ -1130,7 +1192,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Air M2</div>
           <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · 18hr Battery</div>
@@ -1143,7 +1205,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Air M3</div>
           <div class="ecard-spec">13.6" Liquid Retina · 8GB RAM · 256GB SSD · Latest 2024</div>
@@ -1155,7 +1217,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">MacBook Pro M3 Pro</div>
           <div class="ecard-spec">14" Liquid Retina XDR · 18GB RAM · 512GB SSD · ProRes</div>
@@ -1168,7 +1230,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Dell</div>
           <div class="ecard-name">Dell XPS 13 Plus</div>
           <div class="ecard-spec">13.4" OLED · Intel i7-13th Gen · 16GB RAM · 512GB SSD</div>
@@ -1180,7 +1242,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">HP</div>
           <div class="ecard-name">HP Spectre x360 14</div>
           <div class="ecard-spec">14" OLED 2in1 · Intel i7 · 16GB RAM · 1TB SSD · Touch</div>
@@ -1193,7 +1255,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Gaming</span>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">ASUS</div>
           <div class="ecard-name">ASUS ROG Strix G16</div>
           <div class="ecard-spec">16" FHD 165Hz · Intel i9 · RTX 4070 · 16GB RAM · 1TB</div>
@@ -1205,7 +1267,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Lenovo</div>
           <div class="ecard-name">Lenovo ThinkPad X1 Carbon</div>
           <div class="ecard-spec">14" IPS · Intel i7 · 16GB RAM · 512GB SSD · Ultra Light</div>
@@ -1217,7 +1279,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">💻</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h12M6 10h8"/></svg></div>
           <div class="ecard-brand">Microsoft</div>
           <div class="ecard-name">Surface Laptop 5</div>
           <div class="ecard-spec">13.5" PixelSense · Intel i5 · 8GB RAM · 256GB SSD · Windows 11</div>
@@ -1237,7 +1299,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Pro M4 11"</div>
           <div class="ecard-spec">11" Ultra Retina XDR OLED · M4 Chip · 256GB · Wi-Fi + 5G</div>
@@ -1250,7 +1312,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Pro M4 13"</div>
           <div class="ecard-spec">13" Ultra Retina XDR OLED · M4 Chip · 256GB · Thinnest iPad Ever</div>
@@ -1263,7 +1325,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad Air M2 11"</div>
           <div class="ecard-spec">11" Liquid Retina · M2 Chip · 128GB · Wi-Fi · All Colors</div>
@@ -1275,7 +1337,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">iPad 10th Gen</div>
           <div class="ecard-spec">10.9" Liquid Retina · A14 Bionic · 64GB · Wi-Fi · USB-C</div>
@@ -1288,7 +1350,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Tab S9 Ultra</div>
           <div class="ecard-spec">14.6" AMOLED 120Hz · Snapdragon 8 Gen 2 · 256GB · S Pen</div>
@@ -1300,7 +1362,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Tab S9 FE</div>
           <div class="ecard-spec">10.9" TFT 90Hz · Exynos 1380 · 128GB · S Pen Included</div>
@@ -1312,7 +1374,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📱</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
           <div class="ecard-brand">Xiaomi</div>
           <div class="ecard-name">Xiaomi Pad 6</div>
           <div class="ecard-spec">11" IPS 144Hz · Snapdragon 870 · 128GB · Fast Charge</div>
@@ -1332,7 +1394,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch Series 10</div>
           <div class="ecard-spec">46mm · Always-On LTPO OLED · S10 Chip · GPS + Cellular</div>
@@ -1345,7 +1407,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch Ultra 2</div>
           <div class="ecard-spec">49mm Titanium · MicroLED · 36hr Battery · Dual Frequency GPS</div>
@@ -1357,7 +1419,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">Apple Watch SE 2nd Gen</div>
           <div class="ecard-spec">40mm · Retina LTPO OLED · S8 Chip · Crash Detection</div>
@@ -1370,7 +1432,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Watch 7</div>
           <div class="ecard-spec">44mm · Super AMOLED · Exynos W1000 · 40hr Battery · BioActive</div>
@@ -1382,7 +1444,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Watch Ultra</div>
           <div class="ecard-spec">47mm Titanium · AMOLED · Dual GPS · 60hr Battery · IP68</div>
@@ -1394,7 +1456,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Xiaomi</div>
           <div class="ecard-name">Xiaomi Watch S3</div>
           <div class="ecard-spec">1.43" AMOLED · Sapphire Glass · 15-day Battery · SpO2 · GPS</div>
@@ -1406,7 +1468,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">⌚</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="3"/><path d="M9 5v2M15 5v2M9 17v2M15 17v2M12 10v2l1.5 1.5"/></svg></div>
           <div class="ecard-brand">Huawei</div>
           <div class="ecard-name">Huawei Watch GT 4</div>
           <div class="ecard-spec">46mm · AMOLED · 14-day Battery · ECG · SpO2 · GPS</div>
@@ -1426,7 +1488,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Samsung QLED 4K 55"</div>
           <div class="ecard-spec">55" QLED 4K · 120Hz · HDR10+ · Smart TV · 4 HDMI · WiFi 6</div>
@@ -1439,7 +1501,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Samsung OLED 4K 65"</div>
           <div class="ecard-spec">65" OLED 4K · 144Hz · Tizen OS · Gaming Hub · 4K Upscaling</div>
@@ -1451,7 +1513,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">LG</div>
           <div class="ecard-name">LG OLED C4 55"</div>
           <div class="ecard-spec">55" OLED evo · α9 AI 4K Gen7 · 120Hz · Dolby Vision · G-Sync</div>
@@ -1463,7 +1525,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">LG</div>
           <div class="ecard-name">LG NanoCell 4K 50"</div>
           <div class="ecard-spec">50" NanoCell · 4K · 60Hz · HDR · ThinQ AI · 3 HDMI</div>
@@ -1475,7 +1537,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony Bravia XR A80L 55"</div>
           <div class="ecard-spec">55" OLED · XR Cognitive Processor · 4K 120Hz · Dolby Atmos</div>
@@ -1487,7 +1549,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📺</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l10 5-10 5V8z" fill="var(--g)" opacity="0.3"/></svg></div>
           <div class="ecard-brand">Hisense</div>
           <div class="ecard-name">Hisense ULED 4K 65"</div>
           <div class="ecard-spec">65" ULED · 4K 60Hz · Dolby Vision · VIDAA Smart OS · 3 HDMI</div>
@@ -1507,7 +1569,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PlayStation 5 Slim</div>
           <div class="ecard-spec">PS5 Slim · Disc Edition · 1TB SSD · 4K 120fps · Ray Tracing</div>
@@ -1519,7 +1581,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PlayStation 5 Digital</div>
           <div class="ecard-spec">PS5 Digital · No Disc · 1TB SSD · 4K · DualSense Controller</div>
@@ -1532,7 +1594,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">Microsoft</div>
           <div class="ecard-name">Xbox Series X</div>
           <div class="ecard-spec">4K 120fps · 1TB SSD · Xbox Game Pass · Quick Resume · 4K Blu-ray</div>
@@ -1545,7 +1607,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">Nintendo</div>
           <div class="ecard-name">Nintendo Switch OLED</div>
           <div class="ecard-spec">7" OLED Screen · Portable + TV Mode · 64GB · Joy-Con Controllers</div>
@@ -1557,7 +1619,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">PS5 DualSense Controller</div>
           <div class="ecard-spec">Haptic Feedback · Adaptive Triggers · Built-in Mic · USB-C · Multiple Colors</div>
@@ -1569,7 +1631,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🎮</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1" fill="var(--g2)"/><circle cx="17" cy="13" r="1" fill="var(--g2)"/><path d="M6 9a6 6 0 0 0-3 5.2C3.4 17.8 5 20 7 20s3-2 5-2 3 2 5 2 3.6-2.2 4-5.8A6 6 0 0 0 18 9H6z"/></svg></div>
           <div class="ecard-brand">ASUS</div>
           <div class="ecard-name">ROG Ally X Gaming Handheld</div>
           <div class="ecard-spec">7" FHD 120Hz · AMD Z1 Extreme · 24GB RAM · 1TB SSD · Windows 11</div>
@@ -1589,7 +1651,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">🎧</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods Pro 2nd Gen</div>
           <div class="ecard-spec">ANC · Transparency · H2 Chip · USB-C · 6hr + 24hr Battery</div>
@@ -1602,7 +1664,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">🎧</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods 4</div>
           <div class="ecard-spec">H2 Chip · Open-Ear · Adaptive Audio · USB-C · ANC Option</div>
@@ -1614,7 +1676,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🎧</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="ecard-brand">Apple</div>
           <div class="ecard-name">AirPods Max</div>
           <div class="ecard-spec">Over-Ear · Premium ANC · Spatial Audio · H1 Chip · USB-C · 20hr Battery</div>
@@ -1627,7 +1689,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">🎧</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="ecard-brand">Samsung</div>
           <div class="ecard-name">Galaxy Buds3 Pro</div>
           <div class="ecard-spec">ANC · 360° Audio · 24-bit Hi-Fi · Blade Design · 6hr Battery</div>
@@ -1639,7 +1701,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🎧</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony WH-1000XM5</div>
           <div class="ecard-spec">Industry Best ANC · 30hr Battery · Multipoint · Hi-Res Audio</div>
@@ -1651,7 +1713,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">🔊</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r="1" fill="var(--g2)"/></svg></div>
           <div class="ecard-brand">JBL</div>
           <div class="ecard-name">JBL Charge 5</div>
           <div class="ecard-spec">Portable Bluetooth Speaker · IP67 Waterproof · 20hr · PartyBoost · USB-C</div>
@@ -1671,7 +1733,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge new-b">New</span>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">Sony</div>
           <div class="ecard-name">Sony Alpha A7 IV</div>
           <div class="ecard-spec">33MP Full Frame · 4K 60fps · In-Body Stabilization · Dual SD · WiFi</div>
@@ -1684,7 +1746,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">Canon</div>
           <div class="ecard-name">Canon EOS R50</div>
           <div class="ecard-spec">24.2MP APS-C · 4K 30fps · DIGIC X · Dual Pixel AF · WiFi + Bluetooth</div>
@@ -1696,7 +1758,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">Nikon</div>
           <div class="ecard-name">Nikon Z50 II</div>
           <div class="ecard-spec">20.9MP · 4K 30fps · Subject Tracking AF · Vlogger Flip Screen</div>
@@ -1709,7 +1771,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
           <span class="ecard-badge hot-b">Hot</span>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">GoPro</div>
           <div class="ecard-name">GoPro HERO 13 Black</div>
           <div class="ecard-spec">5.3K 60fps · HyperSmooth 7.0 · Waterproof · Magnetic Mounts · 5.3K</div>
@@ -1721,7 +1783,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">DJI</div>
           <div class="ecard-name">DJI Mini 4 Pro Drone</div>
           <div class="ecard-spec">4K 60fps HDR · 34min Flight · Omnidirectional Obstacle Sensing · 20km</div>
@@ -1733,7 +1795,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
 
         <div class="ecard reveal">
           <div class="ecard-accent"></div>
-          <div class="ecard-img">📷</div>
+          <div class="ecard-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="ecard-brand">Instax</div>
           <div class="ecard-name">Fujifilm Instax Mini 12</div>
           <div class="ecard-spec">Instant Film Camera · Auto Exposure · Close-Up Mode · 5 Colors</div>
