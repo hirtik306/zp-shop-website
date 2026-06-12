@@ -50,8 +50,8 @@ nav.scrolled{background:rgba(6,6,8,0.97);border-color:var(--bor)}
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--b2) 1px,transparent 1px),linear-gradient(90deg,var(--b2) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 20%,transparent 100%);opacity:0.4;pointer-events:none}
 .hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;position:relative;z-index:1}
 @media(max-width:820px){.hero-inner{grid-template-columns:1fr;text-align:center}}
-.hero-left{animation:fadeUp .8s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-left{animation:fadeUp .8s ease forwards}
+@keyframes fadeUp{from{opacity:1;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(200,164,0,0.07);border:1px solid rgba(200,164,0,0.22);border-radius:100px;padding:6px 16px 6px 9px;font-size:11px;font-weight:700;color:var(--g2);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:1.6rem}
 .pill-dot{width:7px;height:7px;background:var(--g);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.7)}}
@@ -80,15 +80,15 @@ nav.scrolled{background:rgba(6,6,8,0.97);border-color:var(--bor)}
 @media(max-width:480px){.cat-quicknav{gap:5px;top:10px}.cqn-item{padding:6px 10px 6px 7px}}
 
 /* ── HERO PHONE IMAGE ── */
-.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeRight .9s .2s ease both}
-@keyframes fadeRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeRight .9s .2s ease forwards}
+@keyframes fadeRight{from{opacity:1;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
 .hero-img-wrap{position:relative;width:100%;max-width:560px;display:flex;align-items:center;justify-content:center}
 .hero-img-glow{position:absolute;inset:-30px;background:radial-gradient(ellipse 65% 50% at 55% 62%,rgba(200,164,0,0.22) 0%,transparent 65%);pointer-events:none;animation:glowPulse 5s ease-in-out infinite;border-radius:50%;filter:blur(14px)}
 @keyframes glowPulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
 .phone-collage{width:100%;display:flex;align-items:center;justify-content:center}
 .hero-single-img{width:100%;max-width:560px;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 35px 70px rgba(0,0,0,0.55));animation:heroFloat 5s ease-in-out infinite,heroEntry 1s cubic-bezier(.22,1,.36,1) both}
 @keyframes heroFloat{0%,100%{transform:translateY(0px)}45%{transform:translateY(-18px)}75%{transform:translateY(-9px)}}
-@keyframes heroEntry{from{opacity:0;transform:translateY(50px) scale(0.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes heroEntry{from{opacity:1;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 .carousel-slide,.carousel-dots,.carousel-label,.pc-glow,.pc-img{display:none}
 .feat-card{background:linear-gradient(160deg,var(--d3),var(--d2));border:1px solid var(--bor);border-radius:24px;padding:28px;position:relative;overflow:hidden}
 .feat-card{background:linear-gradient(160deg,var(--d3),var(--d2));border:1px solid var(--bor);border-radius:24px;padding:28px;position:relative;overflow:hidden}
@@ -138,11 +138,11 @@ nav.scrolled{background:rgba(6,6,8,0.97);border-color:var(--bor)}
   display:block;
   filter:drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(100,140,255,0.15));
   border-radius:12px;
-  opacity:0;
+  opacity:1;
   animation:heroImgEntryFloat 5s ease-in-out forwards;
 }
 @keyframes heroImgEntryFloat{
-  0%{opacity:0;transform:translateY(40px)}
+  0%{opacity:1;transform:translateY(10px)}
   18%{opacity:1;transform:translateY(0px)}
   50%{opacity:1;transform:translateY(-18px)}
   100%{opacity:1;transform:translateY(0px)}
@@ -172,11 +172,11 @@ section{padding:90px 5vw}
 .sec-sub{color:var(--t2);font-size:15px;line-height:1.78;margin-top:12px}
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease}
+.reveal-left{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 .reveal-left.in{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal-right{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 .reveal-right.in{opacity:1;transform:translateX(0)}
 
 /* ── PHONES GRID ── */
@@ -478,8 +478,8 @@ section{padding:90px 5vw}
 
 /* ── FOOTER ── */
 footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5rem}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:3rem;max-width:1160px;margin:0 auto 3rem}
-@media(max-width:780px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem;max-width:1160px;margin:0 auto 3rem}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr 1fr}}
 .foot-brand{font-family:'Playfair Display',serif;font-size:23px;font-weight:900;margin-bottom:10px}
 .foot-brand em{color:var(--g);font-style:normal}
 .foot-desc{font-size:12.5px;color:var(--t3);line-height:1.8;margin-bottom:1.3rem}
@@ -792,6 +792,12 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
   .hero-single-img{max-width:260px !important}
 }
 
+
+/* VISIBILITY FALLBACK - ensures nothing stays hidden if JS fails */
+@keyframes showFallback{to{opacity:1;transform:none}}
+.reveal:not(.in){animation:showFallback 0.01s 2s forwards}
+.reveal-left:not(.in){animation:showFallback 0.01s 2s forwards}
+.reveal-right:not(.in){animation:showFallback 0.01s 2s forwards}
 </style>
 </head>
 <body>
@@ -2110,10 +2116,6 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
         </div>
         <div class="faq-a"><div class="faq-a-inner">Hamare paas PTA Approved, JV (Joint Venture), aur Non-PTA — teeno options available hain. Har product card pe clearly likha hota hai. PTA Approved phones mein koi network ya feature issue nahi hoti Pakistan mein. Agar aap PTA specifically chahte hain to filter use karen ya WhatsApp pe confirm karen.</div></div>
       </div>
-          <span class="faq-chev">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Hamare paas PTA Approved, JV (Joint Venture), aur Non-PTA — teeno options available hain. Har product card pe clearly likha hota hai. PTA Approved phones mein koi network ya feature issue nahi hoti Pakistan mein. Agar aap PTA specifically chahte hain to filter use karen ya WhatsApp pe confirm karen.</div></div>
-      </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q">
@@ -2623,7 +2625,7 @@ footer{background:var(--d2);border-top:1px solid var(--b2);padding:4rem 5vw 2.5r
       </div>
 
       <!-- Total Amount to Send -->
-      <div id="total-send-box" style="display:none;background:rgba(200,164,0,0.07);border:1.5px solid rgba(200,164,0,0.35);border-radius:11px;padding:13px 16px;margin-bottom:14px;display:none">
+      <div id="total-send-box" style="display:none;background:rgba(200,164,0,0.07);border:1.5px solid rgba(200,164,0,0.35);border-radius:11px;padding:13px 16px;margin-bottom:14px">
         <div style="font-size:10.5px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Total Amount to Send</div>
         <div style="font-size:26px;font-weight:900;font-family:'Playfair Display',serif;color:var(--g2)" id="total-send-val">Rs. 0</div>
       </div>
@@ -2838,9 +2840,10 @@ function renderPhones(filter){
   currentFilter = filter;
   const grid = document.getElementById('phones-grid');
   let list;
-  if(filter==='all') list = PHONES;
-  else if(filter==='PTA'||filter==='Non-PTA'||filter==='JV') list = PHONES.filter(p=>p.pta===filter);
-  else list = PHONES.filter(p=>p.series===filter);
+  const iphones = PHONES.filter(p=>p.brand==='iphone');
+  if(filter==='all') list = iphones;
+  else if(filter==='PTA'||filter==='Non-PTA'||filter==='JV') list = iphones.filter(p=>p.pta===filter);
+  else list = iphones.filter(p=>p.series===filter);
 
   function ptaBadge(pta){
     if(pta==='PTA') return `<span class="pta-badge pta">✅ PTA</span>`;
@@ -3490,7 +3493,7 @@ function closeCheckout(){
   document.getElementById('o-screenshot').value='';
 }
 
-async function submitOrder(){
+async async function submitOrder(){
   const name    = document.getElementById('o-name').value.trim();
   const phone   = document.getElementById('o-phone').value.trim();
   const address = document.getElementById('o-address').value.trim();
@@ -3598,17 +3601,19 @@ function toast(msg){
 (function(){
   const slides = document.querySelectorAll('.carousel-slide');
   const dots   = document.querySelectorAll('.cdot');
+  if(!slides.length) return; // Guard: no carousel slides present
   const label  = document.getElementById('carouselLabel');
   const labels = ["Samsung Galaxy S25","Samsung S25 Ultra","Vivo Y200","Redmi Note 14 Pro+"];
   let current  = 0;
   let timer;
 
   function goSlide(n){
+    if(!slides[current] || !slides[n]) return;
     slides[current].classList.remove('active');
     slides[current].classList.add('exit');
-    dots[current].classList.remove('on');
-    setTimeout(()=>{ slides[current].classList.remove('exit'); current = n; slides[current].classList.add('active'); }, 400);
-    dots[n].classList.add('on');
+    if(dots[current]) dots[current].classList.remove('on');
+    setTimeout(()=>{ if(slides[current]) slides[current].classList.remove('exit'); current = n; if(slides[current]) slides[current].classList.add('active'); }, 400);
+    if(dots[n]) dots[n].classList.add('on');
     if(label){ label.style.opacity='0'; setTimeout(()=>{ label.textContent=labels[n]; label.style.opacity='1'; },300); }
     current = n;
     clearInterval(timer);
@@ -3642,9 +3647,13 @@ document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>ro.o
 document.getElementById('pm-main-img').style.transition='transform 0.2s ease';
 
 // ─── INIT ───
-renderPhones('all');
-renderCart();
-updateBadge();
+try {
+  renderPhones('all');
+  renderCart();
+  updateBadge();
+} catch(e) {
+  console.error('Init error:', e);
+}
 document.getElementById('modal-veil').addEventListener('click',function(e){if(e.target===this)closeCheckout();});
 
 // ─── LEGAL MODAL ───
